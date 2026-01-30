@@ -1,0 +1,8 @@
+#!/bin/bash
+echo -n Dame tu nombre:
+read Nombre
+echo -n Dame tus apellidos:
+read Apellidos
+echo Te llamas $Nombre $Apellidos
+
+Nick

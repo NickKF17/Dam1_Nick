@@ -1,0 +1,16 @@
+#!/bin/bash
+if [ $# -ne 1 ]
+	then echo "Pasame como parametro un fichero"
+	elif [ -f $1 ]
+			then echo "Copio"
+if [ ! -d tmp ]
+	then echo "No existe tmp y lo voy a crear"
+		mkdir tmp
+fi
+
+cp $1 tmp
+
+
+ else echo "El parametro $1 no es un fichero"
+fi
+

@@ -1,0 +1,47 @@
+package def;
+import java.time.LocalDate;
+import java.util.*;
+public class Consultas {
+	private Paciente paciente;
+	private Medico medico;
+	private LocalDate fechacita;
+	private String motivo;
+	private String Consejomedi;
+	public Consultas(Paciente paci,Medico medi,LocalDate fecha,String moti,String conse,CentroMedico centro) {
+	this.paciente=paci;
+	this.medico=medi;
+	this.fechacita=fecha;
+	this.motivo=moti;
+	this.Consejomedi=conse;
+	centro.addconsultas(this);
+	this.medico.addconsultas(this);
+	this.paciente.addconsultas(this);
+}
+	public String getpaciente() {
+		String nombrecompleto=this.paciente.nombre+" "+this.paciente.apellidos;
+		return nombrecompleto;
+	}
+	public String getmedico() {
+		String nombrecompleto=this.medico.nombre+" "+this.medico.apellidos;
+		return nombrecompleto;
+	}
+	public Medico getmedicos() {
+		return medico;
+	}
+	public Paciente getpacientes() {
+		return paciente;
+	}
+	public LocalDate getfecha() {
+		
+		return this.fechacita;
+	}
+	public String getmotivo() {
+		
+		return this.motivo;
+	}
+	public String getconsejo() {
+		
+		return this.Consejomedi;
+	}
+
+}

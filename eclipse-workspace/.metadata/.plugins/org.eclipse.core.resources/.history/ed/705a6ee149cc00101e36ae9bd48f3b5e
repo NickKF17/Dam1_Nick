@@ -1,0 +1,64 @@
+package defecto;
+
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class CifradoPIN {
+	
+	public static void main(String[] args) {
+		int numDados=0;
+		boolean valido=true;
+		boolean exception=false;
+		Scanner teclado = new Scanner(System.in);
+		do{
+			valido=true;
+			exception=false;
+			System.out.print("Cuantos dados vas a tirar? ");
+			try {
+			numDados = teclado.nextInt();
+			}catch(Exception e) {
+					exception=true;
+			}finally {
+				if(exception==true) {
+					teclado.nextLine();
+				}
+			}
+			if(numDados<1 || exception==true) {
+				valido=false;
+				System.out.println("No es una opción válida");
+			}
+		}while(valido==false);
+		teclado.close();
+		
+		int mitad=numDados*6;
+		mitad=mitad/2;
+		int cont1=0;
+		int cont6=0;
+		int suma=0;
+		System.out.println("Has tirado "+numDados+" dados y ha salido lo siguiente:");
+		for(int i=0;i<numDados;i++) {
+			int dado = (int)(Math.random()*6)+1;
+			suma+=dado;
+			if(dado==1)
+				cont1++;
+			if(dado==6)
+				cont6++;
+			if(i<numDados-1)
+				System.out.print(dado+", ");
+			else
+				System.out.println(dado);
+		}
+
+		if(cont1>0)
+			System.out.println("En "+cont1+" ha salido un 1");
+		if(cont6>0)
+			System.out.println("En "+cont6+" ha salido un 6");
+		System.out.println("La suma de todos los dados da "+suma);
+		if(suma>mitad)
+			System.out.println("Tú tirada está por encima de la mitad ("+mitad+")");
+		else
+			System.out.println("Tú tirada está por debajo de la mitad ("+mitad+")");
+	}
+	
+
+}

@@ -1,0 +1,18 @@
+package def;
+
+import java.util.*;
+
+public class Examen{
+public Examen(int cantidadAExtraer) {
+    ArrayList<Pregunta> copia = new ArrayList<>(Pregunta.preguntas);
+    
+    // 2. Las desordenamos
+    Collections.shuffle(copia);
+    
+    // 3. Cogemos las 'n' primeras de forma manual
+    this.seleccionadas = new ArrayList<>();
+    for (int i = 0; i < cantidadAExtraer; i++) {
+        this.seleccionadas.add(copia.get(i));
+    }
+}
+}

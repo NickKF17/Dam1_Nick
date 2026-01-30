@@ -1,0 +1,12 @@
+.flex-container{
+    border: 1px solid ;
+    box-shadow: 1px 1px 10px black;
+    align-content:center
+}
+.flex-container h1{
+    color: rgb(98, 133, 209);
+}
+.author{
+    color: rgb(68, 83, 102);
+    text-align: center;
+}

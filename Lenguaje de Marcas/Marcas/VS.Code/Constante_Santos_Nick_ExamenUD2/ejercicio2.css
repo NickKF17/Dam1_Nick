@@ -1,0 +1,33 @@
+body{
+    background-color: black;
+    color: aliceblue;
+}
+h1::first-letter{
+    font-size: 3em; 
+    color: orange;
+    text-align: center;
+}
+h1{   color: orange;
+    text-align: center;
+
+}
+#promocionado{
+    color: gold;
+}
+.descripcion{
+    font-family: Gadugi,Arial, Helvetica, sans-serif;
+}
+.anuncio{
+    border: 1px solid red;
+    padding: 2em;
+
+}
+.anuncio h2{
+    text-align: right;
+    color: red;
+}
+.post
+{
+    border: 1px solid white;
+    padding: 2em;
+}

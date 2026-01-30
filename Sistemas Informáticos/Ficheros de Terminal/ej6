@@ -1,0 +1,21 @@
+#!/bin/bash
+case $# in
+1) if [ -f $1 ]
+   then
+    echo "OK: Fichero -$1-"
+    echo "AÑADO: Al fichero -$1- la línea que introduzcas a continuación:"
+    read linea
+    echo "$linea" >> $1
+   else
+    echo "ERROR: El parámetro debe ser 1 fichero"
+   fi;;
+2) if [ -f $1 -a -f $2 ]
+   then
+    echo "AÑADO: A -$2- el contenido de -$1-"
+    cat $1 >> $2
+   else
+    echo "ERROR: Los parámetros deben ser 2 ficheros"
+   fi;;
+
+*) echo "ERROR: Se deben pasar 1 o 2 ficheros como parámetros";;
+esac

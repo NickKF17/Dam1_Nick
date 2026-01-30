@@ -1,0 +1,26 @@
+package def;
+
+import java.io.Closeable;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+
+public class Clases_Pokemon {
+	
+	public static void main(String[] args) {
+		
+		Pokemons pokemon1=new Pokemons("Pikachu","Raichu","Eléctrico",23);
+	Pokemons pokemon2=new Pokemons("Bulbasaur","Ivysaur","Planta",1);
+		
+		Pokemons[] miJuego = new Pokemons[151];
+		miJuego[0]=new Pokemons("Pikachu","Raichu","Eléctrico",23);
+			
+		pokemon1.mostrar();
+		System.out.println("------------------");
+		pokemon2.mostrar();
+	}
+	
+}

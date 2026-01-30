@@ -1,0 +1,52 @@
+package def;
+
+import java.util.HashSet;
+import java.util.*;
+public class Proyecto {
+	private String nombre;
+	private Jefes_Proyect jefe;
+	private ArrayList<Programador> programadores =new ArrayList<>();
+	private String maxemple=null;
+	private String descripcion;
+public Proyecto(String nom,Jefes_Proyect jefe,String desc,String maxemp) {
+	this.nombre=asignarproye();
+	this.descripcion=desc;
+	this.maxemple=maxemp;
+	this.jefe=jefe;
+}
+public void mostrar() {
+	System.out.println("Proyecto: "+this.nombre+".  "+this.descripcion+". Jefe de Proyectos: "+this.jefe.getNombre());
+}
+
+public static String asignarproye() {
+	String code="";
+	HashSet<String>proyectos=new HashSet<>();
+	int i=0;
+	boolean acabo=false;
+do {
+	code="PRO-"+i;
+	if(proyectos.add(code)==true) {
+	acabo=true;
+	}
+	else
+	i++;
+
+}while (acabo=false);
+
+return code;
+}
+public void cambiarjefe(Jefes_Proyect jefe) {
+	this.jefe=jefe;
+	System.out.println("El Jefe del Proyecto "+this.nombre+" ha cambiado. Ahora es "+jefe.getNombre());
+}
+public void asignarProgramador(Programador p) {
+	String maximo=String.valueOf(this.maxemple);
+	if(programadores.size()<this.maxemple) {
+	programadores.add(p);
+	System.out.println(p.getNombre()+" asignado al proyecto "+this.nombre);
+	}
+	else
+		System.out.println("No se puede asignar a "+p.getNombre()+" al proyecto "+ this.nombre+". Maximo de desarroladores cubierto");
+	
+}
+}

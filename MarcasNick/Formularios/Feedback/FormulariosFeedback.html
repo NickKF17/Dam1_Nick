@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Reseña</title>
+    
+<link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+
+    <div class="card">
+        <div class="header">
+            ¡Únete a nuestra comunidad!
+        </div>
+
+        <div class="content">
+            <div class="title-section">
+                <h2>Formulario de Reseña de producto</h2>
+                <p>Eutod et auitilacto ex de comunida de pistro de lesidos.</p>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label>Nombre del Producto<span class="required-star">*</span></label>
+                    <input type="text" placeholder="Nombre del Producto" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Valoración<span class="required-star">*</span></label>
+                    <select>
+                        <option>Selecciona una opción</option>
+                        <option>🌟</option>
+                        <option>🌟🌟</option>
+                        <option>🌟🌟🌟</option>
+                        <option>🌟🌟🌟🌟</option>
+                        <option>🌟🌟🌟🌟🌟</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Comentario</label>
+                    <textarea></textarea>
+                </div>
+
+                <div class="radio-group">
+                    <span class="recommendation-label">Recomendación<span class="required-star">*</span></span>
+                    <label style="display:inline;"><input type="radio" name="rec" value="si"> Sí</label>
+                    <label style="display:inline;"><input type="radio" name="rec" value="no"> No</label>
+                </div>
+
+                <div class="email-box">
+                    <label>Correo Electrónico<span class="required-star">*</span></label>
+                    <input type="email" placeholder="nombre@email.com" required>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn btn-submit">Enviar Reseña</button>
+                    <button type="button" class="btn btn-cancel">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

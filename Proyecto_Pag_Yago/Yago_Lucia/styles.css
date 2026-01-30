@@ -1,0 +1,78 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background: #e6f0ff; 
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #aac7ff;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2f6bff;
+}
+
+.lead {
+  color: #4a4a4a;
+}
+
+.card {
+  background: #f7faff; 
+  border: 1px solid #c9ddff;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+h2 {
+  margin: 0 0 8px;
+  color: #2f6bff;
+}
+
+ul {
+  padding-left: 18px;
+}
+
+.muted {
+  color: #555;
+}
+
+.tile {
+  background: #ffffff;
+  border: 1px solid #aac7ff;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.example {
+  background: #ffffff;
+  border: 1px solid #aac7ff;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.tags {
+  font-size: 0.85rem;
+  color: #2f6bff;
+  font-weight: bold;
+
+}
+footer{
+  text-align: center;
+}

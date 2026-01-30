@@ -1,0 +1,14 @@
+.grid-container{
+    display:grid;
+    grid-template-areas: "Lol Lol Minecraft WiiParty"
+    "Lol Lol RocketLeague GtaVI"
+    "F12025 Roblox Roblox GtaVI";
+
+}
+.grid-container div{
+    border: solid;
+   text-align: center;
+}
+.grid-container div.Lol{
+    grid-area: Lol;
+}

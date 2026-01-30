@@ -1,0 +1,22 @@
+package def;
+
+import java.util.HashMap;
+
+public class MapeoHash {
+
+	public static void main(String[] args) {
+		HashMap<String, Double> sueldos =new HashMap<>();
+		sueldos.put("Jose Maria", 3000.00);
+		sueldos.put("Joseph", 3000.00);
+		sueldos.put("Tu primo", 3000.00);
+		System.out.println(sueldos);
+		sueldos.put("Jose Maria", 0.0);
+		System.out.println(sueldos);
+		String nombre = "Jose Maria";
+		if(sueldos.containsKey(nombre))
+		System.out.printf("El sueldo de %s es %.2f \n",nombre,sueldos.get(nombre));
+		else
+			System.out.println("Esa clave no existe");
+	}
+
+}

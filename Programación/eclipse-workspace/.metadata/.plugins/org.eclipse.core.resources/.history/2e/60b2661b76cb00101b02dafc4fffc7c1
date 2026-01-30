@@ -1,0 +1,86 @@
+package def;
+
+import java.io.Closeable;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+
+public class Ejercicio1 {
+
+	
+	public static void main(String[] args) {
+
+
+	///Escribir un programa que genere de forma consecutiva tiradas de dados entre el 1 y 
+	///el 6, los dados tiene que coincidir y decir cuantas tiradas se han necesitado para que coincidan
+	///, el número de dados que tienen que coincidir lo decidirá el usuario mediante un scanner.
+	///Y al final que aparezca el porcentaje de apariciones que ha tenido cada número hasta que coincidieran.
+	
+		
+		
+		
+	Scanner tcl = new Scanner(System.in);
+	System.out.print("Cuantos dados vas a tirar? ");
+	int num_dados = tcl.nextInt();
+	tcl.close();
+	int contador =0;
+	int arraycontador[]= {0,0,0,0,0,0,0};
+	int arraydados[]=new int [num_dados];
+	
+	
+	for (int i =0 ;i<num_dados;i++) {
+	int dado = (int)(Math.random()*6)+1;
+	arraydados[i]+=dado;
+
+	}
+	System.out.println("Has tirado " + num_dados + " y ha salido lo siguiente:");
+	
+	for(int dad:arraydados) {
+		if (dad<num_dados)
+		System.out.print(dad+", ");
+		else
+			System.out.print(dad);
+		if(dad==1)
+			arraycontador[1]++;
+		if(dad==6)
+			arraycontador[6]++;
+	}
+	String arrayStr= Arrays.toString(arraycontador);
+	
+	System.out.println(arrayStr);
+	
+	/*
+	boolean iguales = false;
+	int intentos =0;
+	int[] respuesta = new int[num_dados];
+	int[] contador = new int[7];
+	do {
+		intentos++;
+	for(int i=0;i<num_dados;i++) {
+		int dado = (int)(Math.random()*6)+1;
+		respuesta[i] = dado;
+		contador[dado]++;
+		if(i == num_dados-1)
+			System.out.println(dado);
+		else
+			System.out.print(dado+" - ");
+		}
+	iguales = true;
+	for(int i=0;i<num_dados;i++) {
+		if(respuesta[0] !=respuesta[i]) {
+			iguales = false;
+		}
+	}
+	}while(iguales == false);
+	System.out.println("Has necesitado "+intentos+" tiradas.");
+	System.out.println();
+	for(int iu=1;iu<7;iu++) {
+		double porcentaje =(100.0*contador[iu])/(num_dados*intentos);
+		System.out.printf("El número "+iu+" ha salido un %.2f %%\n",porcentaje);
+		*/
+		
+	}
+	}

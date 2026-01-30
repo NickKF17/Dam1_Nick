@@ -1,0 +1,27 @@
+package dam1;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+public class FechasyHoras {
+
+	public static void main(String[] args) {
+		LocalDate hoy = LocalDate.now();
+		System.out.println(hoy);
+		
+		LocalTime ahora = LocalTime.now();
+		System.out.println(ahora);
+		
+		LocalDate cumple = LocalDate.of(1968, 10, 8);
+		System.out.println(cumple);
+		
+		LocalTime citaMedica = LocalTime.of(10,15);
+		System.out.println(citaMedica);
+		
+		ahora = ahora.plusHours(1);
+		System.out.println("Dentro de una hora "+ahora);
+		
+	}
+
+
+}

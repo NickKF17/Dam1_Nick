@@ -1,0 +1,35 @@
+#!/bin/bash
+opc=0
+while [ $opc -ne 3 ]
+do
+  clear
+  echo "MENU"
+  echo
+  echo "1- Conexiones actuales."
+  echo "2- Contenido del directorio actual."
+  echo "3- Limpiar pantalla y salir del menú."
+  echo
+  echo -n "Elige una opción: "
+  read opc
+  echo
+  case $opc in
+   1) echo "Conexiones actuales:"
+      echo
+      echo "`who`"
+      echo
+      echo -n "Pulse una tecla para continuar..."
+      read tecla;;
+   2) echo "Contenido del directorio actual:"
+      echo 
+      echo "`ls`"
+      echo
+      echo -n "Pulse una tecla para continuar..."
+      read tecla;;
+   3) clear;;
+   *) echo "Opción $opc desconocida, vuelva a intentarlo."
+      echo
+      echo -n "Pulse una tecla para continuar..."
+      read tecla;;
+  esac
+done
+

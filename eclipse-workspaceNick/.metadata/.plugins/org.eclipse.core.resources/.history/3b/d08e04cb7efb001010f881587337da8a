@@ -1,0 +1,27 @@
+package def;
+
+public class Proyecto {
+	private String nombre;
+	private Jefes_Proyect jefe;
+	private String maxemple=null;
+	private String descripcion;
+public Proyecto(String nom,Jefes_Proyect jefe,String desc,String maxemp) {
+	this.nombre=nom;
+	this.descripcion=desc;
+	nom=asignarproye();
+	this.jefe=jefe;
+}
+public void mostrar() {
+	System.out.println("Proyecto: "+this.nombre+".  "+this.descripcion+". Jefe de Proyectos: "+this.jefe.getNombre());
+}
+public static String asignarproye() {
+	String code="";
+for (int i=0;i<1000;i++)
+	code="PRO-"+i;
+return code;
+}
+public void cambiarjefe(Jefes_Proyect jefe) {
+	this.jefe=jefe;
+	System.out.println("El Jefe del Proyecto "+this.nombre+" ha cambiado. Ahora es "+jefe.nombre);
+}
+}

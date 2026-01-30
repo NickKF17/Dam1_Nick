@@ -1,0 +1,34 @@
+package def;
+
+import java.util.*;
+
+public class Ej18 {
+public static void main(String[] args) {
+	int n;
+	boolean esprimo=true;
+	   
+	HashSet<Integer>conjunto1=new HashSet<>();	     
+	
+	
+do {
+	n= (int)(Math.random()*100);
+	if (n <= 1)
+	    		esprimo=false;   
+	  if (n % 2 == 0) 
+	    	esprimo=false;  
+	  else
+		  conjunto1.add(n);
+	  if (n == 2) {
+	    	esprimo=true; 
+	  conjunto1.add(n);
+	  }
+	    
+	
+	    
+	    
+	   
+}while(conjunto1.size()<6);
+for(int j:conjunto1)
+	System.out.println(j);
+}
+}

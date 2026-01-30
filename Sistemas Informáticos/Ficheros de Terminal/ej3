@@ -1,0 +1,23 @@
+#!/bin/bash
+if [ $# -eq 1 ]
+then
+ if [ -f $1 ]
+ then
+  if [ -r $1 ]
+  then
+   echo "El fichero -$1- tiene permiso de lectura."
+  fi
+  if [ -w $1 ]
+  then
+   echo "El fichero -$1- tiene permiso de escritura."
+  fi
+  if [ -x $1 ]
+  then
+   echo "El fichero -$1- tiene permiso de ejecución."
+  fi
+ else
+  echo "ERROR: El parámetro debe ser un fichero."
+ fi
+else
+ echo "ERROR: Debes pasar 1 parámetro."
+fi

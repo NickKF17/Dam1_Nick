@@ -1,0 +1,147 @@
+package def;
+
+import java.io.Closeable;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+
+public class Ejercicio8 {
+	
+	
+	
+	public static void main(String[] args) {
+
+		/* SIN COMPLETAR
+		Scanner teclado= new Scanner(System.in);
+		
+		
+ int array[][]=new int [2][2];
+ int cont=0;
+ int cont2=0;
+ for (int i=1;i<array.length*2;i++){
+	  for(int j=1;j<array.length*2;  j++){
+		
+		  System.out.println("¿Qué números quieres introducir?");
+		  int numero=teclado.nextInt();
+		  
+	 array[cont][cont2]=numero;
+	 if (cont<=array.length) {
+	 cont++;
+	 }else{
+		 cont2++;}
+	  }
+		 
+	  }
+ 
+for (int i=0;i<array.length;i++){
+	for (int j=0;j<array.length;j++)
+System.out.println(array[i][j]);
+}
+ */
+		
+//		5.Escribe un programa que genere 100 números aleatorios comprendidos entre el 1 y
+//		50 (ambos inclusive) y, posteriormente, obtenga el mayor, el menor y el que mas veces
+//		se repite (y nos diga cuantas veces lo hace).	
+		
+		/*
+		int array100[] = new int [100];
+		
+		for(int i =0;i<array100.length;i++) {
+			array100[i]=(int)(Math.random()*50)+1;
+		System.out.println(array100[i]);
+		}
+		*/
+		
+		
+		Scanner teclado=new Scanner(System.in);
+		
+		
+		
+		
+		String Mayusculas="[A-ZÑ]";
+		String Minusculas="[a-zñ]";
+		String Simbolos="[_,--,!,?*]";
+		String Num="[0-9]";
+		boolean correcto=false;
+		boolean correctomayus=false;
+		boolean correctominus=false;
+		boolean correctosimbolos=false;
+		boolean correctonum=false;
+		boolean correcto20=false;
+		
+		do{
+			System.out.println("Crea una contraseña que contenga las siguientes características: \na. Debe tener al menos 8 caracteres y no más de 20.\n"
+					+ "b. Debe tener al menos una letra mayúscula y una minúscula.\n"
+					+ "c. Debe de tener al menos un número\n"
+					+ "d. Debe tener un símbolo de entre los siguientes: _, -, !, ?, *");
+		String contraseña="Hola123_";
+		
+		correcto=false;
+		
+		
+		
+		Pattern mayus = Pattern.compile(Mayusculas);
+		Matcher mayusm =mayus.matcher(contraseña);
+		if(mayusm.find()) {
+		correctomayus=true;
+		}
+		else 
+			System.out.println("No tiene mayusculas");
+		
+		Pattern minus = Pattern.compile(Minusculas);
+		Matcher minusm =minus.matcher(contraseña);
+		if(minusm.find()) {
+
+		correctominus=true;
+		}
+			else 
+			System.out.println("No tiene minusculas");
+
+		Pattern simbolos = Pattern.compile(Simbolos);
+		Matcher simbolosm =simbolos.matcher(contraseña);
+		if(simbolosm.find()) {
+
+		correctosimbolos=true;
+		}
+			else 
+			System.out.println("No tiene los simbolos aceptados");
+		
+	
+		Pattern num = Pattern.compile(Num);
+		Matcher numm =num.matcher(contraseña);
+		if(numm.find()) {
+		correctonum=true;
+		}
+		else 
+			System.out.println("No tiene numeros");
+		
+	
+		if(contraseña.length()>=8&&contraseña.length()<=20) {
+			correcto20=true;
+		}
+		else 
+			System.out.println("No tiene entre 8 a 20 caracteres");
+		
+		
+		
+		
+		if(correctomayus==true && correctominus==true && correctosimbolos==true && correctonum==true && correcto20==true)
+			System.out.println("Tu contraseña cumple todos los requisitos");
+		else
+			System.out.println("No cumple los requisitos");
+			
+System.out.println();
+
+System.out.println("Escribela de nuevo:");
+
+String rcontraseña=teclado.nextLine();
+	
+		}while(correcto!=true);
+		
+		
+		
+	}
+	}

@@ -1,0 +1,38 @@
+package def;
+
+import java.util.*;
+
+public class Examen{
+	private List<Pregunta> seleccionadas;
+public Examen(int nump) {
+    ArrayList<Pregunta> copia = new ArrayList<>(Pregunta.preguntas);
+    
+    Collections.shuffle(copia);
+    
+    this.seleccionadas = new ArrayList<>();
+    for (int i = 0; i < nump; i++) {
+        
+    	this.seleccionadas.add(copia.get(i));
+    }
+}
+public void mostrar() {
+    for (int i = 0; i < seleccionadas.size(); i++) {
+        Pregunta p = seleccionadas.get(i);
+        System.out.println("\n" + (i + 1) + ". " + p.getEnunciado());
+        ArrayList<String> opciones = p.getOpcionesMezcladas();
+        for (int j = 0; j < opciones.size(); j++) {
+            System.out.println("   " + (j + 1) + ") " + opciones.get(j));
+        }
+    }
+}
+
+public void mostrarsolucion() {
+	for (int i = 0; i < seleccionadas.size(); i++) {
+        Pregunta p = seleccionadas.get(i);
+        System.out.println("\n" + (i + 1) + ". " + p.getEnunciado());
+        ArrayList<String> opciones = p.getOpcionesMezcladas();
+         System.out.println(p.Getcorrecta());
+        
+    }
+}
+}

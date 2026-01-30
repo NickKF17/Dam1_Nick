@@ -1,0 +1,14 @@
+#!/bin/bash
+if [ $# -eq 2 ]
+then echo "1er numero:$1"
+echo "2do numero:$2"
+if [ $1 -eq $2 ]
+then
+relacion='='
+elif [ $1 -gt $2 ]
+then relacion ='>'
+else relacion='<'
+fi
+else echo "No has introducido 2 parametros" 
+fi
+echo "$1 $relacion $2"

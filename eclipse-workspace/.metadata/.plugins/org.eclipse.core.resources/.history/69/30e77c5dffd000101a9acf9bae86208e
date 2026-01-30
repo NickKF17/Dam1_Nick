@@ -1,0 +1,14 @@
+package defecto;
+
+public class PokemonPool {
+
+	public static void main(String[] args) {
+		Pokemon p1 = new Pokemon("Bulbasaur", "Planta",1);
+		Pokemon p2 = new Pokemon("Charizard", "Fuego", "Volador",6);
+		Pokemon p3 = new Pokemon("Ivysaur", "Planta",2);
+		
+		p1.mostrar();
+		p2.mostrar();
+	}
+
+}

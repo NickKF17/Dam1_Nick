@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Tuenti</title>
+    <link rel="stylesheet" href="Ayuda.css">
+</head>
+<body>
+
+<div id="contenedor-principal">
+    <div id="cabecera-azul">
+        <img src="Logo_Tuenti_nuevo_(esquema_inverso).png" alt="Tuenti">
+    </div>
+
+    <div id="contenedor-blanco">
+        <div class="encabezado-form">
+            <h3>Únete a Tuenti <span class="campos">Todos los campos son obligatorios</span></h3>
+            <select class="idioma">
+                <option>Español</option>
+                <option>Inglés</option>
+            </select>
+        </div>
+          
+        <form action="#">
+            <div class="fila">
+                <label>Nombre</label>
+               
+                    <input type="text" placeholder="Nombre" class="campo si">
+                    <p style="color: white;">e</p>
+                    <input type="text" placeholder="Apellidos" class="campo si">
+               
+            </div>
+
+            <div class="fila">
+                <label>Email:</label>
+                <input type="email" class="campo">
+            </div>
+
+            <div class="fila">
+                <label>Sexo</label>
+                <div class="opciones-radio">
+                    <input type="radio" name="sexo" id="h"> <label for="h" class="label-inline">Hombre</label>
+                    <input type="radio" name="sexo" id="m"> <label for="m" class="label-inline">Mujer</label>
+                </div>
+            </div>
+
+            <div class="fila">
+                <label>Fecha de nacimiento</label>
+                <div id="fecha">
+                <select class="campo">
+                    <option>Día</option>
+                    <option>1</option><option>2</option><option>3</option>
+                    <option>4</option><option>5</option><option>6</option>
+                    <option>7</option><option>8</option><option>9</option>
+                    <option>10</option><option>11</option><option>12</option>
+                    <option>13</option><option>14</option><option>15</option>
+                    <option>16</option><option>17</option><option>18</option>
+                    <option>19</option><option>20</option><option>21</option>
+                    <option>22</option><option>23</option><option>24</option>
+                    <option>25</option><option>26</option><option>27</option>
+                    <option>28</option><option>29</option><option>30</option>
+                    <option>31</option>
+                </select>
+
+                <select class="campo">
+                    <option>Mes</option>
+                    <option>Enero</option>
+                    <option>Febrero</option>
+                    <option>Marzo</option>
+                    <option>Abril</option>
+                    <option>Mayo</option>
+                    <option>Junio</option>
+                    <option>Julio</option>
+                    <option>Agosto</option>
+                    <option>Septiembre</option>
+                    <option>Octubre</option>
+                    <option>Noviembre</option>
+                    <option>Diciembre</option>
+                </select>
+
+                <select class="campo">
+                    <option>Año</option>
+                    <option>2025</option>
+                    <option>2024</option>
+                    <option>2023</option>
+                    <option>2022</option>
+                </select>
+            </div>
+
+            </div>
+            <p class="ayuda-texto">La edad mínima permitida es 14.</p>
+
+            <div class="fila">
+                <label>Contraseña</label>
+                <div class="pass-container">
+                    <input type="password" class="campo">
+                   
+                </div>
+            </div>
+            <p class="ayuda-texto blue">Consejos para elegir una contraseña</p>
+
+            <div class="fila">
+                <label>Número de móvil</label>
+                <div id="movil">
+                    <select class="campo"><option>+34 E</option></select>
+                    <input type="text" class="campo">
+                </div>
+            </div>
+
+            <div id="condiciones">
+    <input type="checkbox">
+    <span>
+        Aceptas las <a href="#">Condiciones de uso</a> y la 
+        <a href="#">Política de privacidad</a> de Tuenti y que 
+        Tuenti te envíe comunicaciones, incluso por vía electrónica. 
+        Lee un resumen en el <a href="#">Decálogo de las Condiciones de uso</a>
+    </span>
+</div>
+
+            <div class="boton-container">
+                <input type="submit" id="enviar" value="¡Disfruta de Tuenti!">
+            </div>
+      </form>
+    </div>
+</div>
+        
+</body>
+</html>

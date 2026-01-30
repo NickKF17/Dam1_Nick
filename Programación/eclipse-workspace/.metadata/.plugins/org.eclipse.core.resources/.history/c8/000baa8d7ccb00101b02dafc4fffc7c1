@@ -1,0 +1,33 @@
+package def;
+
+import java.io.Closeable;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+
+public class Ejercicio2 {
+	
+	public static void main(String[] args) {
+	String clientes[]= {"Diego Norrea","Leonel Messi","Cristiano Ronaldo","Neymar Junior","Roberto Carlos","Andrés Iniesta"};
+	Scanner tcl = new Scanner(System.in);
+	
+	int premiados[]=new int [clientes.length];
+	System.out.print("Cuantos premios vas a repartir? ");
+	int num_premios = tcl.nextInt();
+	tcl.close();
+	for(int i=0; i<num_premios;i++) {
+		int suerte = (int)(Math.random()*clientes.length-1);
+		if(premiados[i]==suerte)
+		premiados[i]++;
+		System.out.println(suerte+" ");
+		if(i==suerte)
+			System.out.println(clientes[i]);
+
+			
+	}
+	System.out.println(	Arrays.toString(premiados));
+	}
+	}

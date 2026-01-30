@@ -1,0 +1,7 @@
+#!/bin/bash
+
+IFS=,
+while read nombre apellidoq apellido2
+do
+echo $nombre
+done < empleados

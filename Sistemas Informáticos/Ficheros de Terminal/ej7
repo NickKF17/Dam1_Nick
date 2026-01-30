@@ -1,0 +1,17 @@
+#!/bin/bash
+if [ $# -gt 0 ]
+then
+ for var in $*
+ do
+  if [ -f $var ]
+  then
+   chmod u+x $var
+   echo "DADO: Permiso de ejecución para el propietario del fichero -$var-"
+   ls -l $var
+  else
+   echo "ERROR: -$var- no es un fichero" 
+  fi
+ done
+else
+ echo "ERROR: Debes introducir algún fichero como parámetro"
+fi

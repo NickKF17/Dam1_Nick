@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            background-color: #b0bbc6;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background-color: #ffffff;
+            width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #212c3d;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .content {
+            padding: 25px;
+        }
+
+        /* Estilos base de inputs */
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd; /* Borde un poco más grueso para notar validaciones */
+            border-radius: 8px;
+            font-family: 'Roboto', sans-serif;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        /* 1. Uso de :required */
+        input:required, textarea:required, select:required {
+            border-left: 5px solid #ffcc00; /* Marca amarilla para indicar que es obligatorio */
+        }
+
+        /* 2. Uso de :valid e :invalid para el Correo */
+        /* Solo se aplica cuando el usuario ya ha empezado a escribir algo */
+        input[type="email"]:focus:invalid {
+            border-color: #ff4d4d;
+            background-color: #fff5f5;
+        }
+
+        input[type="email"]:focus:valid {
+            border-color: #2ecc71;
+            background-color: #f0fff4;
+        }
+
+        /* 3. Uso de :hover para los botones */
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease; /* Transición suave */
+        }
+
+        .btn-submit {
+            background-color: #0084ff;
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3; 
+            transform: translateY(-2px); 
+        }
+
+        .btn-cancel {
+            background-color: #94a3b8;
+            color: white;
+        }
+
+        .btn-cancel:hover {
+            background-color: #64748b;
+            color: white;
+        }
+
+       
+        .title-section { text-align: center; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: 500; }
+        .radio-group { display: flex; align-items: center; gap: 15px; font-size: 0.9rem; }
+        .email-box { background-color: #212c3d; padding: 15px; border-radius: 12px; margin-top: 20px; color: white; }
+        .button-group { display: flex; gap: 10px; margin-top: 20px; }

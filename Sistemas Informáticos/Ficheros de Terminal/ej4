@@ -1,0 +1,16 @@
+#!/bin/bash
+if [ -d dir1 ]
+then
+  echo "El directorio -dir1- ya existe."
+else
+  mkdir dir1
+  echo "Creado el directorio -dir1-."
+fi
+cd dir1
+touch "fich"
+echo "Creado el fichero -fich- dentro del directorio -dir1-."
+ls /dev/t*[0-9] >> fich
+cat /etc/passwd >> fich
+echo "Llenado el fichero -fich-."
+echo "Contenido del fichero -fich-."
+more fich

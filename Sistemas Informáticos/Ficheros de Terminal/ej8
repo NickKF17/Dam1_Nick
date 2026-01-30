@@ -1,0 +1,7 @@
+#!/bin/bash
+echo -n "Introduzca un número: "
+read n1
+echo -n "Introduzca otro número: "
+read n2
+resta=`expr $n1 - $n2`
+echo "La resta es... $resta"

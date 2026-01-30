@@ -1,0 +1,18 @@
+package dam1;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+public class FechasyHoras {
+
+	public static void main(String[] args) {
+		LocalDate hoy = LocalDate.now();
+		System.out.println(hoy);
+		for(int i=0;i!=0;) {
+		LocalTime ahora = LocalTime.now();
+		System.out.println(ahora);
+		}
+	}
+
+
+}

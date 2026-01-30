@@ -1,0 +1,133 @@
+
+body {
+    background-color:#007ac2;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+#contenedor-principal {
+    width: 650px;
+    margin: 0 auto;
+}
+
+
+#cabecera-azul {
+    text-align: center;
+    padding: 30px 15px; 
+}
+
+#cabecera-azul img {
+    width: 240px; 
+    height: auto;
+}
+
+#contenedor-blanco {
+    background-color: white;
+    padding: 40px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.encabezado-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 30px;
+}
+
+h3 { margin: 0; font-size: 1.2em; }
+
+.campos { 
+    color: #aaaaaa; 
+    font-weight: normal; 
+    font-size: 0.8em; 
+    margin-left: 10px; 
+}
+.idioma{
+    border-style: none;
+    background-color: white;
+    color: #007ac2;
+}
+
+
+.campo {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9em;
+    background-color: white;
+  
+}
+
+.si{ 
+   max-width: 5.5em;
+}
+
+select.campo {
+  
+    background-color: white;
+    background-image: linear-gradient(to left, #e0e0e0 0%, #e0e0e0 20px, white 20px, white 100%);
+    padding-right: 0px;
+    cursor: pointer;
+    min-width: 80px;
+}
+
+.fila {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.fila > label {
+    width: 180px;
+    text-align: right;
+    margin-right: 20px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.ayuda-texto {
+    margin-left: 200px;
+    font-size: 0.75em;
+    color: #aaaaaa;
+    margin-top: -8px;
+    margin-bottom: 15px;
+}
+
+.ayuda-texto.blue { 
+    color: #0096d2; 
+    cursor: pointer; 
+}
+
+#condiciones {
+    margin-left: 15px;
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #333;
+    display: flex;
+    gap: 10px;
+    line-height: 1.4;
+}
+
+#condiciones a { 
+    color: #0096d2; 
+    text-decoration: none; 
+}
+
+#condiciones a:hover { text-decoration: underline; }
+
+.boton-container {
+    text-align: right;
+    margin-top: 20px;
+}
+
+#enviar {
+    background-color: #0096d2;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}

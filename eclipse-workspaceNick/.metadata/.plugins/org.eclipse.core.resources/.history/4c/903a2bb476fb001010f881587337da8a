@@ -1,0 +1,25 @@
+package def;
+
+abstract class Empleado {
+protected String nombre;
+protected String codigo;
+protected double salario;
+
+	public Empleado(String nom,String codigo,double sala){
+		this.nombre=nom;
+		this.codigo=codigo;
+		this.salario=sala;
+	}
+	class Programador extends Empleado{
+		public Programador(String nom,String codigo,double sala){
+			super(nom,codigo,sala);
+		}
+	}
+	
+class Jefes_Proyect extends Empleado{
+		
+	public Jefes_Proyect(String nom,String codigo,double sala) {
+		super(nom,codigo,sala);
+		}
+	}
+}

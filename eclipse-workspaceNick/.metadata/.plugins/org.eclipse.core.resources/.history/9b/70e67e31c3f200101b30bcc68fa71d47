@@ -1,0 +1,79 @@
+package def;
+
+import java.util.ArrayList;
+
+public abstract class Persona {
+protected String nombre;
+protected String apellidos;
+
+public Persona(String nom,String ape) {
+	this.nombre=nom;
+	this.apellidos=ape;
+}
+public String getNombre() {
+	return this.nombre;
+}
+public String getApellido() {
+	return this.apellidos;
+}
+
+public void addconsultas(Consultas c) {
+	consultasmedi.add(c);
+}
+public void eliminarConsultas(Consultas c ){
+	consultasmedi.remove(c);
+}
+public void listarConsultas() {
+	for(Consultas c:consultasmedi) {
+		System.out.println(" Paciente: "+ c.getpaciente() +"\n Medico: "+c.getmedico()+"\n Fecha: " +c.getfecha()+"   "+"Motivo: "+ c.getmotivo());
+		System.out.println("-----------------");
+}
+}
+class Medico extends Persona{
+	private String especialidad;
+	private int numeroCole;/*6 numeros*/
+	private CentroMedico centromed;
+	public Medico(String nom,String ape,String espe,int numCole,CentroMedico centro ) {
+		super(nom,ape);
+		this.especialidad=espe;
+		this.numeroCole=numCole;
+		this.centromed=centro;
+	centromed.addMedico(this);
+	
+	}
+	public void cambiocentro(CentroMedico centro) {
+		this.centromed.eliminarMedico(this);
+		this.centromed=centro;
+		this.centromed.addMedico(this);
+	}
+}
+
+
+class Paciente extends Persona{
+	private String deni;
+	private int telefono;
+	private ArrayList<Consultas> consultaspaci= new ArrayList<>();
+	private CentroMedico centromed;
+	public Paciente(String nom,String ape,String dni,int telef,CentroMedico centro){
+	super(nom,ape);	
+	this.deni=dni;
+	this.telefono=telef;
+	this.centromed=centro;
+	centro.addPaciente(this);
+	}
+	public void cambiocentro(CentroMedico centro) {
+		this.centromed.eliminarPaciente(this);
+		this.centromed=centro;
+		this.centromed.addPaciente(this);
+	}
+	
+	
+	public void mostrar() {
+		System.out.println(this.apellidos+" "+this.getNombre());
+		System.out.println("CM: "+this.centromed.getNombre()+" DNI: " +this.deni+" Tlf: "+this.telefono);
+	System.out.println("---------------------");
+	}
+	
+}
+
+

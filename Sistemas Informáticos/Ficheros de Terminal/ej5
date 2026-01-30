@@ -1,0 +1,17 @@
+#!/bin/bash
+if [ $# -eq 2 ]
+then
+  if [ -f $1 -a -f $2 ]
+  then
+   echo -n "Quieres sobreescribir -$2- con el contenido de -$1- (S/N): "
+   read resp
+   if [ $resp = 'S' || $resp = 's' ]
+   then
+    cp $1 $2  
+   fi
+  else
+   echo "ERROR: Alguno/s de los parámetros no es un fichero." 
+  fi
+else
+  echo "ERROR: Debes incluir dos ficheros como parámetros."
+fi

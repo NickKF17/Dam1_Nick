@@ -1,0 +1,15 @@
+body{
+    background-color: black;
+}
+#promocionado{
+    color: gold
+}
+h1{
+    text-align: center;
+    color: gold;
+}
+.post,.anuncio{
+    border-color: white;
+    border: 3px;
+    color: white;
+}

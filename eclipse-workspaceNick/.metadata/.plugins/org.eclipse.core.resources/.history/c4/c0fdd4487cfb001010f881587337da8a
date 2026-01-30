@@ -1,0 +1,19 @@
+package def;
+
+public class Proyecto {
+	private String nombre;
+	private Jefes_Proyect jefe;
+	private String maxemple=null;
+	
+public Proyecto(String nom,Jefes_Proyect jefe,String maxemp) {
+	this.nombre=nom;
+	nom=asignarproye();
+	
+}
+public static String asignarproye() {
+	String code="";
+for (int i=0;i<1000;i++)
+	code="PRO-"+i;
+return code;
+}
+}

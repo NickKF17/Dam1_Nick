@@ -1,0 +1,19 @@
+package def;
+
+
+
+public class Main {
+
+	public static void main(String[] args) {
+	
+		Programador p1=new Programador("Nick Constante","",5,true,true);
+		Programador p2=new Programador("Nickos Constante","",5,true,true);
+		
+		Jefes_Proyect j1=new Jefes_Proyect(null, null, 0);
+		
+		
+		p1.mostrar();
+		p2.mostrar();
+	}
+
+}
