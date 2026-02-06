@@ -16,6 +16,11 @@ public class Main {
 		Paciente paciente1 = new Paciente("Antonio Costa");
 		Paciente paciente2 =  new Paciente("Inés Rodrigo");
 		
+		
+		
+		paciente1.anularCita(especialidad1);
+		paciente1.anularCita(especialidad2);
+		
 		especialidad1.listarMedicos();
 		especialidad2.listarMedicos();
 		especialidad3.listarMedicos();

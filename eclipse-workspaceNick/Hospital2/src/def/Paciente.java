@@ -1,5 +1,6 @@
 package def;
 import java.util.HashMap;
+import java.util.*;
 class Paciente extends Persona{
 	
 	private HashMap<String, Medico> listaCitas = new HashMap<>();
@@ -28,5 +29,13 @@ class Paciente extends Persona{
 		
 	}
 	
-	
+	public void anularCita(Especialidad especialidad) {
+		if(this.listaCitas.containsKey(especialidad.getNombre())) {
+			
+			Cita cita=listaCitas.remove(especialidad.getNombre());
+		}
+		else {
+			System.out.println("No tiene cita con ningun medico de la especialidad "+ especialidad.getNombre());
+	}
+	}
 }
