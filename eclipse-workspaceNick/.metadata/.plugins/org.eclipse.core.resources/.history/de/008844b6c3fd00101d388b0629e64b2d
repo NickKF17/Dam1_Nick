@@ -1,9 +1,0 @@
-package def;
-
-public class MapeoHash {
-
-	public static void main(String[] args) {
-
-	}
-
-}
