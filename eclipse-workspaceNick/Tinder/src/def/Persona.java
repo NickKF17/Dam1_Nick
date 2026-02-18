@@ -54,8 +54,19 @@ public void mostrarDatos(){
 
 
 if (this.edadminima==18 && this.edadmaxima==200)
-	System.out.println("No tengo preferencias de edad");
+	System.out.println("No tengo preferencias de edad \n \n");
 else
-	System.out.println("Busco a una persona entre "+this.edadminima+" y "+this.edadmaxima);
+	System.out.println("Busco a una persona entre "+this.edadminima+" y "+this.edadmaxima +"\n\n");
+
+System.out.println("-----------------------------------------------------------------------");
+}
+public boolean esMatch(Persona p) {
+	boolean match = true;
+	int edad1=this.getEdad();
+			int edad2=p.getEdad();
+			if(edad1<p.edadminima || edad1>p.edadmaxima || edad2<this.edadminima || edad2 >this.edadmaxima)
+				match=false;
+			
+	return match;
 }
 }
