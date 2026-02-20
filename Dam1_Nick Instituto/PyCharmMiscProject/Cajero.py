@@ -24,4 +24,4 @@ def validar_retirada(retirada):
     retirada = int(retirada)
     if retirada <0 :
         raise ValueError("No se puede retirar un numero negativo")
-    
+
