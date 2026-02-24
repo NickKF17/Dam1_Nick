@@ -15,6 +15,7 @@ private HashMap<Participante,Double> listaParticipantes=new HashMap <>();
 	}
 public void obtenerPodium() {
 	HashMap<Participante,Double> copia=new HashMap<>(listaParticipantes);
+	System.out.println();
 	obtenerMedalla("ORO", copia);
 	obtenerMedalla("PLATA", copia);
 	obtenerMedalla("BRONCE", copia);
@@ -39,12 +40,23 @@ public void obtenerMedalla(String medalla,HashMap<Participante,Double> copia) {
 	}else
 		System.out.println("No hay mas participantes en la competicion");
 }
-public Participante obtenerMayor(HashMap<Participante,Double>lista) {
-	double mayor=-1;
-			Participante pMayor=null;
-			for(Participante p: lista)
-				if (p>mayor)
-			  
-return pMayor;
+public Participante obtenerMayor(HashMap<Participante, Double> lista) {
+    // 1. Validar que el mapa no esté vacío para evitar errores
+    if (lista == null || lista.isEmpty()) {
+        return null;
+    }
+
+    Participante pMayor = null;
+    double maxPuntaje = -1.0; // O Double.NEGATIVE_INFINITY para mayor seguridad
+
+    // 2. Recorrer el mapa usando un entrySet para obtener clave y valor simultáneamente
+    for (Map.Entry<Participante, Double> entrada : lista.entrySet()) {
+        if (entrada.getValue() > maxPuntaje) {
+            maxPuntaje = entrada.getValue();
+            pMayor = entrada.getKey();
+        }
+    }
+
+    return pMayor;
 }
 }
