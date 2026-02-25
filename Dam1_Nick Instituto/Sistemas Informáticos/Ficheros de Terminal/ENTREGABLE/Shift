@@ -2,9 +2,9 @@
 
 if [ -f ficheroClase3 ]
 then
-        echo "ERROR:Ya existe este directorio"
+        echo "ERROR:Ya existe este fichero"
 else
-touch ficheroClase1
+touch ficheroClase3
 echo "Fichero 'ficheroClase3' creado"
 fi
         while [  $# -gt  0 ]
