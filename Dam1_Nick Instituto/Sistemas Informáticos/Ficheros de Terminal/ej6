@@ -1,21 +1,32 @@
 #!/bin/bash
-case $# in
-1) if [ -f $1 ]
-   then
-    echo "OK: Fichero -$1-"
-    echo "AÑADO: Al fichero -$1- la línea que introduzcas a continuación:"
-    read linea
-    echo "$linea" >> $1
-   else
-    echo "ERROR: El parámetro debe ser 1 fichero"
-   fi;;
-2) if [ -f $1 -a -f $2 ]
-   then
-    echo "AÑADO: A -$2- el contenido de -$1-"
-    cat $1 >> $2
-   else
-    echo "ERROR: Los parámetros deben ser 2 ficheros"
-   fi;;
 
-*) echo "ERROR: Se deben pasar 1 o 2 ficheros como parámetros";;
-esac
+read -p "Introduce la ruta del directorio: " directorio
+read -p "Introduce la palabra a buscar en los nombres: " palabra
+
+if [ ! -d "$directorio" ]; then
+    echo "Error: El directorio no existe."
+else
+    for archivo in "$directorio"/*"$palabra"*; do
+        if [ -f "$archivo" ]; then
+            echo "------------------------------------------"
+            echo "Archivo encontrado: $(basename "$archivo")"
+            echo "Contenido:"
+            cat "$archivo"
+            echo "------------------------------------------"
+            
+            read -p "¿Deseas borrar este archivo? (s/n): " confirmacion
+            
+            if [[ "$confirmacion" == [sS] ]]; then
+                rm "$archivo"
+                
+                if [ ! -e "$archivo" ]; then
+                    echo "El archivo ha sido borrado correctamente."
+                else
+                    echo "Error: No se ha podido eliminar el archivo."
+                fi
+            else
+                echo "Operación cancelada. El archivo se mantiene."
+            fi
+        fi
+    done
+fi

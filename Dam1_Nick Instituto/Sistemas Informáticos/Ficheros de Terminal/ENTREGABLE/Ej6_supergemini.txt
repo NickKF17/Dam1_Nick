@@ -1,0 +1,30 @@
+#!/bin/bash
+echo "Introduce el directorio:"
+read directorio
+echo "Introduce la palabra:"
+read palabra
+
+
+if [ ! -d "$directorio" ]; then
+    echo "El directorio no existe."
+else
+
+    for archivo in "$directorio"/*"$palabra"*; do
+        if [ -f "$archivo" ]; then
+            echo "--- Contenido de $archivo ---"
+            cat "$archivo"
+            
+
+            echo "¿Quieres borrarlo? (s/n)"
+            read respuesta
+            
+            if [ "$respuesta" = "s" ]; then
+                rm "$archivo"
+
+                if [ ! -f "$archivo" ]; then
+                    echo "Archivo borrado correctamente."
+                fi
+            fi
+        fi
+    done
+fi
