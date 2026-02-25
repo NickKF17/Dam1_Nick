@@ -12,8 +12,12 @@ public class Main {
 	Localizacion l2=new Localizacion(5,1);
 	
 	
-	Camioneta c1=new Camioneta(100.0,l1);
+	Camioneta c1=new Camioneta(100.0,100);
+	Localizacion origen =new Localizacion(0,0);
 	
+	Paquete proximo =Paquete.destinoMasCercano(origen);
+	
+
 	
 	c1.calcularRuta();
 	c1.mostrarRuta();
