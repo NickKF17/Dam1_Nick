@@ -26,7 +26,7 @@ public class Juego {
 	public void nuevaPrueba(int eliminados) {
 		
 		Prueba.pruebas.put(num_pruebas, new Prueba(eliminados,num_participantes));
-		
+		this.num_participantes=num_participantes-eliminados;
 		
 		if (eliminados>num_participantes)
 		System.out.println("No pueden eliminarse mas jugadores que jugadores activos");
@@ -38,7 +38,7 @@ public class Juego {
 			System.out.println("El ganador es el jugador " );
 		}
 			}
-		this.num_participantes=num_participantes-eliminados;
+
 
 	
 	}
