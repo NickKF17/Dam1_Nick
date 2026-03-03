@@ -7,7 +7,7 @@ use obras_musicales;
 CREATE TABLE compositor (
 	   id_compositor SMALLINT UNSIGNED,
     nombre VARCHAR(50) NOT NULL,
-    año_nacimiento YEAR,
+    año_nacimiento int,
     nacionalidad CHAR(4), -- esto es una chapuza
     CONSTRAINT pk_id_compositor PRIMARY KEY (id_compositor)
 );
@@ -15,7 +15,7 @@ CREATE TABLE compositor (
 CREATE TABLE director (
     id_director SMALLINT UNSIGNED,
     nombre VARCHAR(50) NOT NULL,
-    año_nacimiento YEAR,
+    año_nacimiento int,
     nacionalidad CHAR(4), -- esto es una chapuza
     CONSTRAINT pk_id_director PRIMARY KEY (id_director),
     constraint uq_director_nombre UNIQUE(nombre),
@@ -25,7 +25,7 @@ CREATE TABLE director (
 CREATE TABLE interprete (
     id_interprete SMALLINT UNSIGNED,
     nombre VARCHAR(50) NOT NULL,
-    año_nacimiento YEAR,
+    año_nacimiento int,
     nacionalidad CHAR(4), -- esto es una chapuza
     CONSTRAINT pk_id_interprete PRIMARY KEY (id_interprete)
 );
