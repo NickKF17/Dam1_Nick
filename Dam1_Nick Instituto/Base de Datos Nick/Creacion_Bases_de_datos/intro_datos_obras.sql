@@ -72,3 +72,5 @@ VALUES
 
 select * from obra;
 
+select* from compositor;
+
