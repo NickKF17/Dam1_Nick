@@ -1,64 +1,91 @@
-Drop Database if exists obras_musicales;
-Create database obras_musicales;
-use obras_musicales;
+-- Script de creación del ejercicio 5 de obras musicales
+-- Construimos a partir del modelo relacional.
 
+DROP DATABASE IF EXISTS obras_musicales;
+CREATE DATABASE obras_musicales;
+USE obras_musicales;
 
-
+-- DROP TABLE IF EXISTS compositor;
 CREATE TABLE compositor (
-	   id_compositor SMALLINT UNSIGNED,
+    id_compositor SMALLINT UNSIGNED AUTO_INCREMENT,
     nombre VARCHAR(50) NOT NULL,
-    año_nacimiento int,
-    nacionalidad CHAR(4), -- esto es una chapuza
-    CONSTRAINT pk_id_compositor PRIMARY KEY (id_compositor)
+	año_nacimiento SMALLINT,
+    nacionalidad CHAR(4), -- Como código de pais: ES,FR,IT... ESTO ES UNA CHAPUZA.
+    CONSTRAINT pk_compositor PRIMARY KEY (id_compositor)
 );
 
 CREATE TABLE director (
-    id_director SMALLINT UNSIGNED,
-    nombre VARCHAR(50) NOT NULL,
-    año_nacimiento int,
-    nacionalidad CHAR(4), -- esto es una chapuza
-    CONSTRAINT pk_id_director PRIMARY KEY (id_director),
-    constraint uq_director_nombre UNIQUE(nombre),
-    constraint nombre_not_null CHECK(nombre is not null) 
+    id_director SMALLINT UNSIGNED AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL, 
+    -- nombre VARCHAR(50) NOT NULL UNIQUE, 
+    -- unique no está en el modelo relacional, pero hemos pensado que hay que ponerlo
+    año_nacimiento SMALLINT,
+    nacionalidad CHAR(4), -- Como código de pais: ES,FR,IT... ESTO ES UNA CHAPUZA.
+    CONSTRAINT pk_director PRIMARY KEY (id_director),
+    CONSTRAINT uq_director_nombre UNIQUE(nombre), -- También se puede poner así. De una forma o la otra.
+    CONSTRAINT chk_nombre_not_null CHECK (nombre IS NOT NULL) 
 );
-
 CREATE TABLE interprete (
-    id_interprete SMALLINT UNSIGNED,
+    id_interprete SMALLINT UNSIGNED AUTO_INCREMENT,
     nombre VARCHAR(50) NOT NULL,
-    año_nacimiento int,
-    nacionalidad CHAR(4), -- esto es una chapuza
-    CONSTRAINT pk_id_interprete PRIMARY KEY (id_interprete)
+    año_nacimiento SMALLINT,
+    tipo VARCHAR(45), -- Como código de pais: ES,FR,IT... ESTO ES UNA CHAPUZA.
+    CONSTRAINT pk_interprete PRIMARY KEY (id_interprete)
 );
 
-CREATE table obra( 
-id_obra Smallint unsigned,
-titulo varchar(50) not null,
-tipo varchar(25),
-modo varchar(25),
-tono ENUM("domayor","domenor","do#mayor","do#menor"),
-constraint pk_obra primary key(id_obra),
-compositor SMALLINT unsigned,
-constraint fk_obra_compositor foreign key(compositor)
-    References compositor(id_compositor)
-    on delete set null on update cascade
+CREATE TABLE obra (
+	id_obra SMALLINT UNSIGNED AUTO_INCREMENT,
+	titulo VARCHAR(50) NOT NULL, -- ojo, que no estaba bien el relacional.
+	tipo VARCHAR(25),
+    modo VARCHAR(25), -- probablemente sea un error pero necesitamos contexto que no tenemos
+	tono ENUM('domayor','domenor','do#mayor','do#menor'), -- y así completas todas las demás
+	id_compositor SMALLINT UNSIGNED,
+    CONSTRAINT pk_obra PRIMARY KEY (id_obra),
+    CONSTRAINT fk_obra_compositor FOREIGN KEY (id_compositor) -- campo de esta tabla
+        REFERENCES compositor(id_compositor)
+        ON DELETE SET NULL ON UPDATE CASCADE -- SET NULL porque... 
 );
 
-create table version (
-id_version mediumint unsigned, -- como lleva un constraint de pk no hace falta indicar not null ni unique 
-id_obra smallint unsigned,
-id_interprete smallint unsigned,
-id_director smallint unsigned,
--- id_version Smallint unsigned es un error de diseño ya que deberia ser mas grande que el id de obras --
-constraint pk_version primary key(id_obra,id_interprete,id_director),
-constraint fk_version_obra foreign key (id_obra)
-references obra(id_obra)
-on delete restrict on update cascade, -- por defecto lo normal --
-constraint fk_version_interprete foreign key(id_interprete)
-references interprete(id_interprete)
-on delete restrict on update cascade,
-constraint fk_version_director foreign key(id_director)
-references director(id_director)
- on delete restrict on update cascade
+CREATE TABLE version (
+	id_version MEDIUMINT UNSIGNED AUTO_INCREMENT, -- Como lleva un constraint de PK, no hace falta indicar NOT NULL ni UNIQUE.
+    id_obra  SMALLINT UNSIGNED NOT NULL,
+    id_interprete  SMALLINT UNSIGNED NOT NULL,
+    id_director  SMALLINT UNSIGNED,
+    -- id_version  SMALLINT UNSIGNED -- ERROR DE DISEÑO
+    CONSTRAINT pk_version PRIMARY KEY(id_version),
+    CONSTRAINT fk_version_obra FOREIGN KEY (id_obra)
+		REFERENCES obra(id_obra)
+        ON DELETE RESTRICT ON UPDATE CASCADE, -- Por defecto. 
+	CONSTRAINT fk_version_interprete FOREIGN KEY (id_interprete)
+		REFERENCES interprete(id_interprete)
+		ON DELETE RESTRICT ON UPDATE CASCADE,
+	CONSTRAINT fk_version_director FOREIGN KEY (id_director)
+		REFERENCES director(id_director) 
+        -- Las dos opciones PUEDEN ser válidas dependiendo del contexto.
+		ON DELETE RESTRICT ON UPDATE CASCADE
+        -- ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 
+
+-- POSIBILIDAD REAL, INCOMPATIBLE CON EL MODELO RELACIONAL.
+-- Además, tiene un error de diseño. 
+/*CREATE TABLE version (
+    id_obra  SMALLINT UNSIGNED NOT NULL,
+    id_interprete  SMALLINT UNSIGNED NOT NULL,
+    id_director  SMALLINT UNSIGNED,
+    -- id_version  SMALLINT UNSIGNED -- ERROR DE DISEÑO
+    CONSTRAINT pk_version PRIMARY KEY(id_obra,id_interprete,id_director),
+    CONSTRAINT fk_version_obra FOREIGN KEY (id_obra)
+		REFERENCES obra(id_obra)
+        ON DELETE RESTRICT ON UPDATE CASCADE, -- Por defecto. 
+	CONSTRAINT fk_version_interprete FOREIGN KEY (id_interprete)
+		REFERENCES interprete(id_interprete)
+		ON DELETE RESTRICT ON UPDATE CASCADE,
+	CONSTRAINT fk_version_director FOREIGN KEY (id_director)
+		REFERENCES director(id_director) 
+        -- Las dos opciones PUEDEN ser válidas dependiendo del contexto.
+		ON DELETE RESTRICT ON UPDATE CASCADE
+        -- ON DELETE SET NULL ON UPDATE CASCADE
+);
+*/
