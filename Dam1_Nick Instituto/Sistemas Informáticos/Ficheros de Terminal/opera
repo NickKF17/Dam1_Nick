@@ -1,3 +1,0 @@
-#!/bin/bash
-operando=2
-echo"El operando vale"$operando

@@ -1,9 +1,0 @@
-INDEX VERSION 1.134+/home/alumno/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.core
-1930106844.index
-2990761776.index
-1916565486.index
-3873037154.index
-2676264188.index
-577950837.index
-1865797976.index
-2558765489.index
