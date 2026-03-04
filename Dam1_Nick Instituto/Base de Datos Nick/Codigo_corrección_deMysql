@@ -1,0 +1,2 @@
+mysql -u admin -p < tu ejercicio 
+mysql -u admin -p < la rubrica de victor
