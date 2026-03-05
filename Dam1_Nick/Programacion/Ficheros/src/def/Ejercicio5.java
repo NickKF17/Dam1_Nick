@@ -8,7 +8,7 @@ import java.util.*;
 
 public class Ejercicio5 {
 	public static void main(String[] args) {
-		Path nombreFichero = Path.of("home/alumno/estadisticas");
+		Path nombreFichero = Path.of("/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ejercicio5.txt");
 		ArrayList<String> lineas = null;
 		try{
 			lineas = (ArrayList<String>) Files.readAllLines(nombreFichero);
@@ -31,8 +31,10 @@ public class Ejercicio5 {
 			double media = sumaAlturas/(contHombre+contMujer);
 			System.out.printf("Hombres: %d\n", contHombre);
 			System.out.printf("Mujeres: %d\n", contMujer);
-			System.out.printf("Estatura media: %.2f\n", contHombre);
-			
+			System.out.printf("Estatura media: %.2f\n", media);
+		
 		}
+		else
+			System.out.println("El fichero esta vacio");
 	}
 }

@@ -1,0 +1,36 @@
+package def;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
+import java.util.*;
+
+public class Ejercicio6 {
+
+	public static void main(String[] args) {
+		Path nombreFichero = Path.of("/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ejercicio6.txt");
+		ArrayList<String> lineas = null;
+		try{
+			lineas = (ArrayList<String>) Files.readAllLines(nombreFichero);
+		}catch (Exception e) {
+			System.out.println();
+		}
+	System.out.println(lineas);
+	for (int i=0;i<lineas.size();i=i+3)	{
+		
+	}
+		for (String l :lineas)	{
+		}
+			for (String l :lineas)	{
+			}
+		Pattern patron = Pattern.compile("[^0-9]+$");
+		Matcher coincidencia = patron.matcher(l);
+		if (coincidencia.matches()==false)
+		System.out.println(coincidencia.matches());
+	
+	}
+
+}

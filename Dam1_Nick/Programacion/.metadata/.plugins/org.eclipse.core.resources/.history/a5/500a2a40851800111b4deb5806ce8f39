@@ -1,0 +1,22 @@
+package def;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+
+public class Ejercicio6 {
+
+	public static void main(String[] args) {
+		Path nombreFichero = Path.of("/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ejercicio6.txt");
+		ArrayList<String> lineas = null;
+		try{
+			lineas = (ArrayList<String>) Files.readAllLines(nombreFichero);
+		}catch (Exception e) {
+			System.out.println();
+		}
+		
+		
+
+	}
+
+}
