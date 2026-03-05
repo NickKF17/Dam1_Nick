@@ -17,20 +17,20 @@ public class Ejercicio6 {
             // Mantenemos el cast que te pide tu profesor
             lineas = (ArrayList<String>) Files.readAllLines(nombreFichero);
             
+            // Verificamos que no sea nulo y que tenga contenido
+            if (lineas != null && !lineas.isEmpty()) {
+                if (sigueFormato(lineas)) {
+                    System.out.println("El formato es el correcto");
+                } else {
+                    System.out.println("No es el formato correcto");
+                }
+            } else {
+                System.out.println("El archivo está vacío o no existe");
+            }
+            
         } catch (Exception e) {
             System.out.println("Error al leer el archivo");
         }
-        // Verificamos que no sea nulo y que tenga contenido
-        if (lineas != null && !lineas.isEmpty()) {
-            if (sigueFormato(lineas)) {
-                System.out.println("El formato es el correcto");
-            } else {
-                System.out.println("No es el formato correcto");
-            }
-        } else {
-            System.out.println("El archivo está vacío o no existe");
-        
-    }
     }
 
     public static boolean sigueFormato(ArrayList<String> lineas) {

@@ -17,20 +17,20 @@ public class Ejercicio6 {
             // Mantenemos el cast que te pide tu profesor
             lineas = (ArrayList<String>) Files.readAllLines(nombreFichero);
             
+            // Verificamos que no sea nulo y que tenga contenido
+            if (lineas != null && !lineas.isEmpty()) {
+                if (sigueFormato(lineas)) {
+                    System.out.println("El formato es el correcto");
+                } else {
+                    System.out.println("No es el formato correcto");
+                }
+            } else {
+                System.out.println("El archivo está vacío o no existe");
+            }
+            
         } catch (Exception e) {
             System.out.println("Error al leer el archivo");
         }
-        // Verificamos que no sea nulo y que tenga contenido
-        if (lineas != null && !lineas.isEmpty()) {
-            if (sigueFormato(lineas)) {
-                System.out.println("El formato es el correcto");
-            } else {
-                System.out.println("No es el formato correcto");
-            }
-        } else {
-            System.out.println("El archivo está vacío o no existe");
-        
-    }
     }
 
     public static boolean sigueFormato(ArrayList<String> lineas) {
@@ -70,62 +70,3 @@ public class Ejercicio6 {
         return formato;
     }
 }
-
-
-
-/* MI forma, funcional solo en archivos con grupos de 3 lineas. Arriba la version de gemini , una perfeccionada de la mia
-public class Ejercicio6 {
-
-	public static void main(String[] args) {
-		Path nombreFichero = Path.of("/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ejercicio6.txt");
-		ArrayList<String> lineas = null;
-		try{
-			lineas = (ArrayList<String>) Files.readAllLines(nombreFichero);
-		}catch (Exception e) {
-			System.out.println();
-		}
-
-		if(nombreFichero!=null) {
-		if(sigueFormato(lineas)==true)
-			System.out.println("El formato es el correcto");
-		else
-			System.out.println("No es el formato correcto");
-		}
-		else
-			System.out.println("El archivo esta vacio");
-
-
-	}
-	public static boolean sigueFormato(ArrayList<String> lineas) {
-		boolean formato=true;
-		if (lineas.size() % 3 != 0) {
-            formato = false;
-        } else {
-		for (int i=0;i<lineas.size();i=i+3)	{
-			
-			Pattern patron = Pattern.compile("[^0-9]+$");
-			Matcher coincidencia = patron.matcher(lineas.get(i));
-			if (coincidencia.matches()==false) {
-				System.out.println("Esta linea deberia ser Nombre o apellido");
-		formato=false; 
-			}
-		Pattern patron2 = Pattern.compile("[^0-9]+$");
-		Matcher coincidencia2 = patron2.matcher(lineas.get(i+1));
-		if (coincidencia2.matches()==false) {
-			System.out.println("Esta linea deberia ser Nombre o apellido");
-	formato=false; 
-		}
-		
-		Pattern patron3 = Pattern.compile("[0-9]+$");
-		Matcher coincidencia3 = patron3.matcher(lineas.get(i+2));
-		if (coincidencia3.matches()==false) {
-			System.out.println("Esta linea deberia ser un numero");
-	formato=false; 
-		}
-		}
-        }
-		return formato;
-	}
-	
-}
-*/

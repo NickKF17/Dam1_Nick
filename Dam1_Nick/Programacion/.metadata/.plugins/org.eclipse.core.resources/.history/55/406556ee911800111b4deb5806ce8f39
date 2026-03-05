@@ -17,6 +17,8 @@ public class Ejercicio6 {
             // Mantenemos el cast que te pide tu profesor
             lineas = (ArrayList<String>) Files.readAllLines(nombreFichero);
             
+}
+            
         } catch (Exception e) {
             System.out.println("Error al leer el archivo");
         }
@@ -30,7 +32,6 @@ public class Ejercicio6 {
         } else {
             System.out.println("El archivo está vacío o no existe");
         
-    }
     }
 
     public static boolean sigueFormato(ArrayList<String> lineas) {
