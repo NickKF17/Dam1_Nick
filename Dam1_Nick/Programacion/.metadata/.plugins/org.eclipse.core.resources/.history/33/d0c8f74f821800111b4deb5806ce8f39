@@ -14,7 +14,7 @@ public static void main(String[] args) {
 	ventana.setSize(350,200);
 	
 	ventana.setLayout(new FlowLayout());
-	JButton boton=new JButton("Aceptar");
+	JButton boton=new JButton("Acpetar");
 	
 	JLabel mensaje=new JLabel("Hola mundo");
 	JTextField edicion=new javax.swing.JTextField(50);

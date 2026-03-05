@@ -17,7 +17,6 @@ INDEX VERSION 1.134+/home/alumno/Dam_Nick/Dam1_Nick/Programacion/.metadata/.plug
 1136377202.index
 1865797976.index
 1808164556.index
-3138643158.index
 3873037154.index
 956424321.index
 793669427.index
