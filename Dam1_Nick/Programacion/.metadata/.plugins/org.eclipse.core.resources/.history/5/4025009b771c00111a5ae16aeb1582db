@@ -1,0 +1,25 @@
+package def;
+
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.*;
+public class Ejercicio1Writer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public static void escribir3() {
+		try (PrintWriter pluma = new PrintWriter(new FileWriter("/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/tabla-n.tx"))){//con el FileWriter en medio añades en lugar de reemplazar
+			Scanner teclado=new Scanner(System.in);
+			num=teclado.nextInt();
+			for() {
+			resultado
+			pluma.printf("%d x %d= %d",num,i,resultado);
+			}
+		}catch(Exception e){
+			System.out.println();
+		}
+	}
+
+}

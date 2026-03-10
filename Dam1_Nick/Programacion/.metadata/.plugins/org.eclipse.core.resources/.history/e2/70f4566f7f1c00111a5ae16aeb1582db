@@ -1,0 +1,17 @@
+package def;
+
+public class Ejercicio2Writer {
+
+	public static void main(String[] args) {
+ darLaVuelta("origen.txt","destino.txt");
+
+	}
+	
+	public static void darLaVuelta(String origen,String destino) {
+		ArrayList<String> listaOrigen=null;
+		ArrayList<String> listaDestino =null;
+		
+		listaOrigen=leerFichero(origen);
+	}
+
+}

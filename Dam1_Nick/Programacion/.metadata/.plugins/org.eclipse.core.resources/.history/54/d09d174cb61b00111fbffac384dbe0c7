@@ -1,0 +1,54 @@
+package def;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
+
+public class Ficheros2 {
+
+	public static void main(String[] args) {
+		//escribir1();
+		//escribir2();
+		escribir3();
+	}
+public static void escribir1() {
+	try {
+		//FileWriter pluma =new FileWriter("/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ficheros2.txt");//Borra si ya existia cosas dentro
+		FileWriter pluma =new FileWriter("/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ficheros2.txt",true);//añade al fichero
+	pluma.write("Hola mundo \nescrito en un fichero\n");
+		pluma.write("Hola Mundo \nescrito en un fichero\n");
+		pluma.write("Segunda linea\n");
+		pluma.close();
+	}
+	catch(Exception e) {
+		System.out.println("Error: "+ e.getMessage());
+	}
+}
+public static void escribir2() {
+	try (BufferedWriter pluma =new BufferedWriter(new FileWriter("/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ficheros2.txt",true))){//si pones el buffered o el filewriter en el try no haria falta cerrar "pluma"
+		pluma.write("Hola Mundo \nescrito en un fichero\n");
+		pluma.newLine();
+		pluma.write("Segunda linea\n");
+		pluma.newLine();
+		
+	}catch(Exception e) {
+		System.out.println("Error: "+ e.getMessage());
+	}
+	
+}
+public static void escribir3() {
+	try (PrintWriter pluma = new PrintWriter(new FileWriter("/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ficheros2.2.txt",true))){
+		pluma.print("Primera Linea. ");
+		pluma.println("Sigo en la segunda linea y salto.");
+		pluma.print("Segunda Linea\n");
+		String nombre="Ana";
+		String apellido="Campos Moro";
+		int edad=37;
+		double salario=2345.359;
+		pluma.printf("Nombre: %s, %s, Edad: %d. SUeldo: %.2f",apellido,nombre,edad,salario);
+	}catch(Exception e){
+		System.out.println();
+	}
+}
+}

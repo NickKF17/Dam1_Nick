@@ -10,7 +10,7 @@ import java.util.*;
 public class Ejercicio6 {
 
     public static void main(String[] args) {
-        Path nombreFichero = Path.of("/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ejercicio6.txt");
+        Path nombreFichero = Path.of("/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ejerc icio6.txt");
         ArrayList<String> lineas = null;
         
         try {

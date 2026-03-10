@@ -1,0 +1,17 @@
+package def;
+
+public class Ficheros2 {
+
+	public static void main(String[] args) {
+		escribir1();
+
+	}
+public static void escribir1() {
+	try {
+		
+	}
+	catch(Exception e) {
+		System.out.println("Error: "+ e.getMessage());
+	}
+}
+}
