@@ -1,0 +1,84 @@
+package def;
+
+import java.io.File;
+import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
+
+public class Ejercicio11 {
+
+	public static void main(String[] args) {
+		try {
+			Scanner teclado =new Scanner(System.in);
+			String fichero="/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ejercicio11.txt";
+			HashMap <String,String> usuarios =leerFichero(fichero);
+			
+			
+			System.out.println("¿Quieres crear un usuario (c) o acceder a tu cuenta (a)?");
+			String pregunta=teclado.nextLine();
+
+			switch(pregunta) {
+			case "c":
+				comprobarUsuario(usuarios);
+				break;
+			case "a":
+				nuevoUsuario(usuarios);
+				break;
+			default:
+				System.out.println("Introduce una opcion valida");
+			}
+
+		}catch(Exception e) {
+			System.out.println("El fichero no existe");
+		}
+	}
+private static void nuevoUsuario(HashMap<String, String> usuarios) {
+		System.out.println("Hola");
+		
+	}
+private static void comprobarUsuario(HashMap<String, String> usuarios) {
+	Scanner teclado =new Scanner(System.in);	
+	
+	System.out.println("Introduzca su usuario por favor");
+	String usuario =teclado.nextLine();
+	System.out.println("Introduzca su contraseña:");
+	String contraseña=teclado.nextLine();
+	
+	if(usuarios.containsKey(usuario)) {
+		if(!usuarios.containsValue(contraseña))
+			System.out.println("contraseña incorrecta");
+	}else
+		System.out.println("El usuario no existe");
+	
+	if(usuarios.containsKey(usuario) && usuarios.containsValue(contraseña))
+		System.out.println("Accediendo a su cuenta...");
+		
+	}
+public static HashMap<String,String> leerFichero(String fichero){
+HashMap <String,String> usuarios = new HashMap<>();
+	
+	try {File fiche=new File(fichero);
+	Scanner lector =new Scanner(fiche);
+	String linea=null;
+
+	while (lector.hasNextLine()){
+	linea=lector.nextLine();
+	usuarios.put(linea.substring(0, linea.indexOf(":")),linea.substring(linea.indexOf(":")+1));
+	
+		}
+if(linea==null) {
+	System.out.println("El fichero esta vacio");
+}
+	lector.close();
+		}catch (Exception e) {
+			System.out.println("Error con el fichero");
+			System.out.println(e.getMessage());
+		}
+	
+	return usuarios;
+}
+	
+
+}

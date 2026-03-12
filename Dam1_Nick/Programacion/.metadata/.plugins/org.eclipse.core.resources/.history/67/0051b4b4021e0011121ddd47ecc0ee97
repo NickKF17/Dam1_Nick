@@ -1,0 +1,110 @@
+package def;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
+
+public class Ejercicio11 {
+
+	public static void main(String[] args) {
+		try {
+			Scanner teclado =new Scanner(System.in);
+			String fichero="/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ejercicio11.txt";
+			HashMap <String,String> usuarios =leerFichero(fichero);
+			
+			
+			System.out.println("¿Quieres crear un usuario (c) o acceder a tu cuenta (a)?");
+			String pregunta=teclado.nextLine();
+
+			switch(pregunta) {
+			case "c":
+				comprobarUsuario(usuarios);
+				break;
+			case "a":
+				nuevoUsuario(usuarios);
+				break;
+			default:
+				System.out.println("Introduce una opcion valida");
+			}
+
+		}catch(Exception e) {
+			System.out.println("El fichero no existe");
+		}
+	}
+public static void nuevoUsuario(HashMap<String, String> usuarios) {
+	Scanner teclado =new Scanner(System.in);
+	String fichero="/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ejercicio11.txt";
+System.out.println("Introduce tu usuario");
+String usuario=teclado.nextLine();
+System.out.println("Introduce una contraseña");
+String contraseña=teclado.nextLine();
+
+if(usuarios.containsKey(usuario))
+	System.out.println("Ese usuario ya existe");
+else
+	leerFichero(fichero);
+
+		try (PrintWriter pluma = new PrintWriter(new FileWriter("/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ejercicio11.txt",true))){//con el FileWriter en medio añades en lugar de reemplazar
+			pluma.print("\nPrimera Linea. ");
+			pluma.println("Sigo en la segunda linea y salto.");
+			pluma.print("Segunda Linea\n");
+			String nombre="Ana";
+			String apellido="Campos Moro";
+			int edad=37;
+			double salario=2345.359;
+			pluma.printf("Nombre: %s, %s, Edad: %d. SUeldo: %.2f",apellido,nombre,edad,salario);
+			pluma.println();
+		}catch(Exception e){
+			System.out.println();
+		}
+		
+	}
+public static void comprobarUsuario(HashMap<String, String> usuarios) {
+	Scanner teclado =new Scanner(System.in);	
+	
+	System.out.println("Introduzca su usuario por favor");
+	String usuario =teclado.nextLine();
+	System.out.println("Introduzca su contraseña:");
+	String contraseña=teclado.nextLine();
+	
+	if(usuarios.containsKey(usuario)) {
+		if(!usuarios.containsValue(contraseña))
+			System.out.println("contraseña incorrecta");
+	}else
+		System.out.println("El usuario no existe");
+	
+	if(usuarios.containsKey(usuario) && usuarios.containsValue(contraseña))
+		System.out.println("Accediendo a su cuenta...");
+		
+	}
+public static HashMap<String,String> leerFichero(String fichero){
+HashMap <String,String> usuarios = new HashMap<>();
+	
+	try {File fiche=new File(fichero);
+	Scanner lector =new Scanner(fiche);
+	String linea=null;
+
+	while (lector.hasNextLine()){
+	linea=lector.nextLine();
+	usuarios.put(linea.substring(0, linea.indexOf(":")),linea.substring(linea.indexOf(":")+1));
+	
+		}
+if(linea==null) {
+	System.out.println("El fichero esta vacio");
+}
+	lector.close();
+		}catch (Exception e) {
+			System.out.println("Error con el fichero");
+			System.out.println(e.getMessage());
+		}
+	
+	return usuarios;
+}
+	
+
+}

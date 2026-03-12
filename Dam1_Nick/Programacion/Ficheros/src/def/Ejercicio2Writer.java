@@ -64,8 +64,6 @@ public class Ejercicio2Writer {
 					}catch(Exception e){
 						System.out.println("Error: "+e.getMessage());
 					}
-					
-					
 		}
 
 	}
