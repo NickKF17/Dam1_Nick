@@ -6,3 +6,4 @@ nick:Kagari
 Kagari:nick
 pinipon:PiniponAction33
 Nickytongo:Guapetongo33
+nicko:Kagari::

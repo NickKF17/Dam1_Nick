@@ -84,24 +84,14 @@ HashMap <String,String> usuarios = new HashMap<>();
 	String linea=null;
 int i=0;
 int contador=0;
-
-while (lector.hasNextLine()){
+	while (lector.hasNextLine()){
 	linea=lector.nextLine();
 	
 if(linea.charAt(i)==':')
 	contador ++;
+	usuarios.put(linea.substring(0, linea.indexOf(":")),linea.substring(linea.indexOf(":")+1));
 	i++;
 		}
-if(contador!=1)
-	System.out.println("Formato incorrecto");
-else
-{
-	while (lector.hasNextLine()){
-	linea=lector.nextLine();
-
-	usuarios.put(linea.substring(0, linea.indexOf(":")),linea.substring(linea.indexOf(":")+1));
-		}
-}
 if(linea==null) {
 	usuarios=null;
 }
