@@ -1,0 +1,45 @@
+package def;
+
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+
+public class Ejercicio6Bol24 {
+
+	public static void main(String[] args) {
+
+	}
+
+public static void LeerFichero() {
+	ArrayList<String> lineas=null;
+
+	try {
+	
+	Path fichero = Path.of("/home/alumno/cosasficheros.txt");
+	lineas = (ArrayList<String>) Files.readAllLines(fichero);
+	
+}catch(Exception e) {
+System.out.println("Error con el fichero");
+System.out.println(e.getMessage());
+}
+	for(String linea:lineas)
+		System.out.println(linea);
+}
+public static void escribirFichero() {
+	try (PrintWriter pluma = new PrintWriter(new FileWriter("/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ficheros2.2.txt",true))){//con el FileWriter en medio añades en lugar de reemplazar
+		pluma.print("\nPrimera Linea. ");
+		pluma.println("Sigo en la segunda linea y salto.");
+		pluma.print("Segunda Linea\n");
+		String nombre="Ana";
+		String apellido="Campos Moro";
+		int edad=37;
+		double salario=2345.359;
+		pluma.printf("Nombre: %s, %s, Edad: %d. SUeldo: %.2f",apellido,nombre,edad,salario);
+		pluma.println();
+	}catch(Exception e){
+		System.out.println();
+	}
+}
+}

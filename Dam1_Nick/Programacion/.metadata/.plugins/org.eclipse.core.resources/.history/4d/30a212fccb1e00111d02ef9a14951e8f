@@ -1,0 +1,41 @@
+package def;
+
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Ejercicio6Bol24 {
+
+	public static void main(String[] args) {
+String fSoluciones="soluciones.txt";
+String fRespuestas ="respuestas.txt";
+String fNotas="notas.txt";
+ArrayList<String> soluciones=null;
+HashMap<String,ArrayList<String>> respuestas =null;
+soluciones=leeSoluciones(fSoluciones);
+	respuestas=leeRespuestas(fRespuestas);
+	grabaNotas(fNotas,soluciones, respuestas);
+	
+	}
+
+	public static void grabaNotas(String fNotas, ArrayList<String> soluciones,
+			HashMap<String, ArrayList<String>> respuestas) {
+		
+		
+	}
+
+	public static HashMap<String, ArrayList<String>> leeRespuestas(String fRespuestas) {
+		
+		return null;
+	}
+
+	public static ArrayList<String> leeSoluciones(String fSoluciones) {
+		
+		return null;
+	}
+
+
+}

@@ -1,0 +1,67 @@
+package def;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Ejercicio6Bol24 {
+
+	public static void main(String[] args) {
+String fSoluciones="/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/Ejercicio6_Bol24_txts/soluciones.txt";
+String fRespuestas ="respuestas.txt";
+String fNotas="notas.txt";
+int numPreguntas=10;
+
+String [] soluciones;
+HashMap<String,String[]> respuestas =null;
+soluciones=leeSoluciones(fSoluciones);
+	// respuestas=leeRespuestas(fRespuestas);
+	grabaNotas(fNotas,soluciones, respuestas);
+	
+	}
+public static String[] leeSoluciones(String fichero) {
+		Path ruta=Path.of(fichero);
+		String linea=null;
+		try {
+			linea=Files.readString(ruta);
+		}catch (Exception e) {
+			System.out.println("Error: "+e.getMessage());
+		}
+
+		String[] soluciones=linea.split(", ");
+		for(String letra:soluciones)
+			System.out.println(letra);
+		return null;
+	}
+	
+
+	public static HashMap<String, String[]> leeRespuestas(String fichero) {
+		try(BufferedReader lector= new BufferedReader(new FileReader(fichero))){
+			String linea;
+			while((linea=lector.readLine())!=null) {
+				int posicion =linea.indexOf(':');
+			String alumno=linea.substring(0,posicion);
+			String respuestas =linea.substring(posicion+2);
+		dicionario.put(alumno,respuestas.split(", "));
+			
+			}
+		}catch (Exception e) {
+			System.out.println("Error: "+e.getMessage());
+		}
+		return null;
+	}
+	public static void grabaNotas(String fichero, String[] soluciones,
+			HashMap<String, String[]> respuestas) {
+		
+		
+	}
+
+	
+
+
+}

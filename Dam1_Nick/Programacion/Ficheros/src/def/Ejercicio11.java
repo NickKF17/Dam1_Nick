@@ -33,7 +33,7 @@ public class Ejercicio11 {
 			}
 			}
 			else
-				System.out.println("El fichero esta vacio");
+				System.out.println("El fichero esta vacio o hay una linea vacia");
 				
 		}catch(Exception e) {
 			System.out.println("El fichero no existe");
@@ -46,9 +46,15 @@ System.out.println("Introduce tu usuario");
 String usuario=teclado.nextLine();
 System.out.println("Introduce una contraseña");
 String contraseña=teclado.nextLine();
+System.out.println("Repite la contraseña");
+String contraseñarepetida=teclado.nextLine();
 
 if(usuarios.containsKey(usuario))
 	System.out.println("Ese usuario ya existe");
+else if(!contraseña.equals(contraseñarepetida))
+	System.out.println("Las contraseñas no coinciden");
+else if(usuario.indexOf(':')>=0||contraseña.indexOf(':')>=0)
+	System.out.println("Ni el usuario ni la contraseña pueden tener :");
 else {
 	try (PrintWriter pluma = new PrintWriter(new FileWriter("/home/alumno/Dam_Nick/Dam1_Nick/Programacion/Ficheros/ejercicio11.txt",true))){//con el FileWriter en medio añades en lugar de reemplazar
 			pluma.print(usuario+":"+contraseña+"\n");
@@ -82,33 +88,20 @@ HashMap <String,String> usuarios = new HashMap<>();
 	try {File fiche=new File(fichero);
 	Scanner lector =new Scanner(fiche);
 	String linea=null;
-int i=0;
-int contador=0;
 
-while (lector.hasNextLine()){
-	linea=lector.nextLine();
-	
-if(linea.charAt(i)==':')
-	contador ++;
-	i++;
-		}
-if(contador!=1)
-	System.out.println("Formato incorrecto");
-else
-{
+
 	while (lector.hasNextLine()){
 	linea=lector.nextLine();
 
 	usuarios.put(linea.substring(0, linea.indexOf(":")),linea.substring(linea.indexOf(":")+1));
 		}
-}
+
 if(linea==null) {
 	usuarios=null;
 }
 	lector.close();
 		}catch (Exception e) {
-			System.out.println("Error con el fichero");
-			System.out.println(e.getMessage());
+			System.out.println("Error:"+e.getMessage());
 			usuarios=null;
 		}
 	
