@@ -1,1 +1,4 @@
-
+E34:Respirar azufre:6:0
+E36:Hola Respirar azufre:8:0
+E34:ADios Respirar azufre:10:1
+E34:Respirar azufre:2:0
