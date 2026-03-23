@@ -11,7 +11,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ficheros2 {
+public class Ficheros_Escribir {
 
 	public static void main(String[] args) {
 		//escribir1();

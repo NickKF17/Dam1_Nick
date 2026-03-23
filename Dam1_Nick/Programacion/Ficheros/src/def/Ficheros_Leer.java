@@ -8,7 +8,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Ficheros {
+public class Ficheros_Leer {
 public static void main(String[] args) {
 	// metodo1();
 	// metodo2();

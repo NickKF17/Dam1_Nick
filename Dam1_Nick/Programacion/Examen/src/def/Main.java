@@ -45,7 +45,8 @@ public class Main {
 		    "Mejora la agudeza visual", 
 		    "Reduce la fatiga y el sueño"
 		);
-		
+
+	
 		Examen e1=new Examen(6);
 
 		Examen e2=new Examen(6);	

@@ -36,21 +36,25 @@ public void mostrarsolucion() {
     }
 }
 public void hacerexamen() {
+	
 		   for (int i = 0; i < seleccionadas.size(); i++) {
+			   int correcta=0;
 		        Pregunta p = seleccionadas.get(i);
 		        System.out.println("\n" + (i + 1) + ". " + p.getEnunciado());
 		        ArrayList<String> opciones = p.getOpcionesMezcladas();
 		        for (int j = 0; j<opciones.size(); j++) {
 		            System.out.println("   " + (j + 1) + ") " + opciones.get(j));
+		            if(opciones.get(j).equals(p.Getcorrecta()));
+		            correcta=j+1;
 		        }
 		        Scanner teclado =new Scanner(System.in);
-		        String respuesta=teclado.nextLine();
-		        if (respuesta==p.getOpcionesMezcladas())
+		        int respuesta=teclado.nextInt();
+		        if (respuesta==correcta)
 		        	System.out.println("Correcta");
 		        else
 		        	System.out.println("Bobolon te has equivocado");
-		  
 		    }
+		   
 	}
 		
 
