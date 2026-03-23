@@ -195,6 +195,14 @@ SET SQL_SAFE_UPDATES = 1;
 
 alter table pedidos 
 	add column fecha_prueba varchar(20);
+    alter table pedidos
+    REname column fecha_texto to fecha;
+    alter table pedidos
+    MOdify column fecha Date;
 #Update pedidos Set fecha_prueba= fecha_texto;
 Commit;
 select * from pedidos;
+explain pedidos;
+
+Alter table pedidos 
+drop column fecha_prueba;
