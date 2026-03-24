@@ -4,5 +4,5 @@
 /**
  * 
  */
-module Tomamipaquetemami {
+module Paqueteria {
 }

@@ -16,13 +16,16 @@ static final int TAMANYO_REGISTRO=(TAMANYO_NOMBRE *2 )+4;
 		try {
 		crearAgenda(fichero,agenda);
 		leerRegistro(fichero,2);
-		leerRegistro(fichero,5);
+		leerRegistro(fichero,4);
 		modificarRegistro(fichero,2,"Ana Maria",33);
 		leerRegistro(fichero,2);
 		leerRegistro(fichero, 3);
 		// nuevoRegistro(fichero,"José Antonio",56);
-		leerRegistro(fichero,5);
+		leerRegistro(fichero,4);
 		System.out.println();
+		eliminarRegistro(fichero, 4);
+		leerRegistro(fichero, 4);
+		modificarRegistro(fichero, 4, "Elvira", 17);
 		leerTodosLosRegistros(fichero);
 		}catch(Exception e) {
 			System.out.println("Error: "+e.getMessage());
@@ -36,6 +39,7 @@ static final int TAMANYO_REGISTRO=(TAMANYO_NOMBRE *2 )+4;
 		for(int i =1;i<numRegistros;i++) {
 			String nombre =leerNombre(raf);
 		int edad = raf.readInt();
+		if(nombre.charAt(0)!='*')
 		System.out.printf("Registro: %d - Nombre: %s. Edad: %d\n",i,nombre,edad);
 		}
 	}
@@ -91,8 +95,12 @@ static final int TAMANYO_REGISTRO=(TAMANYO_NOMBRE *2 )+4;
 			}
 			String nombre =leerNombre(raf);
 			int edad = raf.readInt();
+			if(nombre.charAt(0)!='*')
 			System.out.printf("Registro: %d - Nombre: %s. Edad: %d\n",registro,nombre,edad);
-			}
+		
+		else
+			System.out.println("El registro "+ registro+ " esta marcado para ser eliminado");
+		}
 			}
 			
 	public static String leerNombre(RandomAccessFile raf) throws Exception{
@@ -114,11 +122,33 @@ static final int TAMANYO_REGISTRO=(TAMANYO_NOMBRE *2 )+4;
 			}
 			else {
 				raf.seek(posicion);
+				if(raf.readChar()!='*') {
+					raf.seek(posicion);
 				escribirNombre(raf, nombre);
 				raf.writeInt(edad);
 				System.out.println("Registro " + registro + " modificado correctamente");
+				}
+				else
+					System.out.println("No puedes modificar un registro que ha sido marcado como borrado");
 			}
 	}
 	}
-}
-
+	
+	public static void eliminarRegistro(String fichero,int posicionnatu) throws Exception{
+		try(RandomAccessFile raf = new RandomAccessFile(fichero,"rw")){	
+			long posicion=(posicionnatu-1)*TAMANYO_REGISTRO;
+			if(posicion>=raf.length()) {
+				System.out.println("El Registro "+ posicion +" no existe");
+				System.out.println("El registro mas alto es el "+ raf.length()/TAMANYO_REGISTRO);
+				
+			}
+			else {
+			
+			raf.seek(posicion);
+			if(raf.readChar()=='*') {
+					System.out.println("El registro "+posicion+" ya esta borrado");
+			}else {
+				raf.seek(posicion);
+			raf.writeChar('*');
+			}
+			}}}}
