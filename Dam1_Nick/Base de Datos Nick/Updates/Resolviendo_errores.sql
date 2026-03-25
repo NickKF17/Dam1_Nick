@@ -24,6 +24,8 @@ SELECT * FROM clientes;
 -- 2.1) Miro a ver qué está mal
 select * from clientes;
 -- 2.2) Corrijo
+SET SQL_SAFE_UPDATES = 0;
+
 UPDATE clientes SET email = REPLACE (email, '.con','.com');
 -- gomez.conrado@gmail.com -> gomez.comrado@gmail.com ¡ERROR! Así que, lo mejoramos.
 UPDATE clientes SET email = REPLACE (email, '.con','.com') WHERE email LIKE '%.con';
@@ -34,6 +36,7 @@ SELECT replace('gomez.conrado@gmail.con','.con','.com');
 -- SOLUCIONES:
 -- 1) parto el email en el @ y luego concateno de vuelta. [solución muy buena muy general]
 -- 2) Solución válida para el ejemplo 2 de clase que tiene pocos datos. 
+SET SQL_SAFE_UPDATES = 1;
 select email from clientes where email like '%.con';
 SET SQL_SAFE_UPDATES = 0;
 UPDATE clientes SET email = REPLACE (email, 'email.con','email.com') WHERE email LIKE '%.con';
@@ -156,7 +159,9 @@ SET SQL_SAFE_UPDATES = 0;
 Update productos set precio_sucio= replace(replace(replace(precio_sucio,'$',''),'€',''),',','.');
 Update productos set precio_sucio=replace(precio_sucio,'EUR','');
 Update productos set precio_sucio=replace(precio_sucio,' ','');
-Update productos set precio_sucio=replace(precio_sucio,'Gratis','0.00');
+# Update productos set precio_sucio=replace(precio_sucio,'Gratis','0.00'); Cutre ya que solo va en esta base de datos
+Update productos set precio_sucio=0.00 where precio_sucio REGEXP '[a-zA-Z]+';
+
 SET SQL_SAFE_UPDATES = 1;
 select * from productos;
 
@@ -168,6 +173,11 @@ Start Transaction;
 SET SQL_SAFE_UPDATES = 0;
 Alter table productos	
     MODIFY COLUMN precio DEcimal(10,2);
+    
+    /*
+    Alter table productos
+    change precio_sucio precio Decimal(10,2);
+    */
 SET SQL_SAFE_UPDATES = 1;
 select * from productos;
 commit;
@@ -192,7 +202,19 @@ select substring(fecha_prueba,7,4);
 
 Update pedidos set fecha_texto=concat(substring(fecha_prueba,7,4),'-',substring(fecha_prueba,4,2),'-',substring(fecha_prueba,1,2)) WHERE fecha_texto REGEXP '[0-9]{4}$';
 SET SQL_SAFE_UPDATES = 1;
-
+#Otra manera de hacerlo
+/*
+Update
+Set fecha_texto = Case
+When fecha_texto like '%/%/____' THEN STR_TO_DATE(fecha_texto,%d/%m/%Y)
+When fecha_texto like '%-%-____' THEN THEN STR_TO_DATE(fecha_texto,%d-%m-%Y)
+When fecha_texto like '____.%.%' THEN THEN STR_TO_DATE(fecha_texto,%d.%m.%Y)
+else fecha_texto END
+where
+fecha_texto like '%/%/____' 
+or fecha_texto like '%-%-____' 
+or fecha_texto like '____.%.%';
+*/
 alter table pedidos 
 	add column fecha_prueba varchar(20);
     alter table pedidos
@@ -206,3 +228,158 @@ explain pedidos;
 
 Alter table pedidos 
 drop column fecha_prueba;
+
+#Start Transaction
+#SavePoint nombredelsavepoint
+#RollBack to nombredelsavepoint
+
+
+-- Bloque 3: Integridad y Deduplicación
+-- 1. Productos huérfanos:
+select * from productos;
+select * from categorias;
+
+-- Encontramos los problemas
+SELECT * from productos p LEFT JOIN categorias c ON p.categoria_id = c.id WHERE c.id is null; -- 2 resultados
+START transaction;
+UPDATE productos p LEFT JOIN categorias c ON p.categoria_id = c.id 
+	SET p.categoria_id = 4 
+    WHERE c.id is null;
+-- comprobamos
+SELECT * from productos p LEFT JOIN categorias c ON p.categoria_id = c.id WHERE c.id is null; -- 0 resultados
+ROLLBACK;
+
+-- CON SUBCONSULTAS 1
+-- 1) Encontrar problemas. Productos huérfanos
+SELECT * FROM productos WHERE categoria_id NOT IN (select id from categorias);
+-- 2) ACTUALIZO EN TRANSACCIÓN
+START TRANSACTION;
+UPDATE productos 
+	SET categoria_id = 4
+	WHERE categoria_id NOT IN (select id from categorias);
+-- 3) COMPROBAMOS
+SELECT * FROM productos WHERE categoria_id NOT IN (select id from categorias);
+-- 4) TERMINADO. 
+ROLLBACK;
+
+
+-- CON SUBCONSULTAS 2. Me molesta el 4.
+select * from categorias;
+-- 1) Encontrar problemas. Productos huérfanos
+SELECT * FROM productos WHERE categoria_id NOT IN (select id from categorias);
+-- 2) ACTUALIZO EN TRANSACCIÓN
+START TRANSACTION;
+UPDATE productos 
+	SET categoria_id = (select id from categorias where nombre like 'General')
+	WHERE categoria_id NOT IN (select id from categorias);
+-- 3) COMPROBAMOS
+SELECT * FROM productos WHERE categoria_id NOT IN (select id from categorias);
+-- 4) TERMINADO. 
+COMMIT;
+
+#El 2 lo hacemos nosotros
+
+#El 3 
+Select * from clientes;
+/* Ejemplillo
+Start Transaction;
+Delete from clientes where id= 4;
+select * from pedidos;
+Rollback;
+*/
+explain pedidos;
+
+-- VAMOS A POR LOS CLIENTES DUPLICADOS
+SELECT email,count(*) FROM clientes GROUP BY email HAVING count(*) > 1;
+SELECT id,email FROM clientes WHERE email LIKE (SELECT email FROM clientes GROUP BY email HAVING count(*) > 1); 
+START transaction;
+-- TRAMPOSAMENTE:
+
+-- SACO EL 3:
+SELECT min(id) FROM clientes WHERE email LIKE (SELECT email FROM clientes GROUP BY email HAVING count(*) > 1); 
+-- SACO EL 4 y el 5:
+SELECT id FROM clientes WHERE email LIKE (SELECT email FROM clientes GROUP BY email HAVING count(*) > 1); 
+-- Esto solo funciona para un cliente. En este caso, funciona pero es TRAMPA. 
+UPDATE pedidos
+	SET cliente_id = (SELECT min(id) FROM clientes WHERE email LIKE (SELECT email FROM clientes GROUP BY email HAVING count(*) > 1))
+    WHERE cliente_id IN (SELECT id FROM clientes WHERE email LIKE (SELECT email FROM clientes GROUP BY email HAVING count(*) > 1));
+
+-- ¿CÓMO ELIMINO DUPLICADOS BIEN? ¡IDEA FELIZ! JOIN CONTIGO MISMO
+
+SELECT c.id,email,p.id as pedido_id,p.cliente_id FROM clientes c JOIN pedidos p ON c.id = p.cliente_id;
+
+SELECT 
+    c1.id, c1.email, p.id AS pedido_id, p.cliente_id, c2.email,c2.id
+FROM
+    clientes c1
+        JOIN
+    pedidos p ON c1.id = p.cliente_id
+		JOIN
+	clientes c2 ON c1.email = c2.email
+WHERE c2.id < c1.id
+ORDER BY pedido_id;
+
+SET SQL_SAFE_UPDATES = 0;
+UPDATE 
+	pedidos p 
+		JOIN 
+	clientes c1 ON p.cliente_id = c1.id
+		JOIN
+	clientes c2 ON c1.email = c2.email
+SET p.cliente_id = c2.id
+WHERE 
+	c2.id < c1.id;
+SELECT * FROM pedidos;
+-- ahora que ya no hay pedidos de los clientes duplicados, eliminamos esos clientes.
+DELETE c2
+FROM clientes c1 JOIN clientes c2 ON c1.email = c2.email
+WHERE c2.id > c1.id;
+select * from clientes;
+Set sql_safe_updates=1;
+COMMIT;
+# Lo que queda lo sacamos nosotros
+
+# -- BLOQUE 4: 
+-- 2) BLINDAJE
+-- Blindaje: Añade las restricciones de FOREIGN KEY a productos y pedidos.
+SELECT * FROM pedidos;
+SELECT * FROM clientes;
+-- FALLA POR LOS PEDIDOS DE CLIENTES INEXISTENTES. VAMOS A ASIGNAR ESOS PEDIDOS A UN CLIENTE FICTICIO
+ALTER TABLE pedidos
+	ADD CONSTRAINT fk_pedidos_clientes FOREIGN KEY(cliente_id)
+		REFERENCES clientes(id) ON DELETE RESTRICT ON UPDATE CASCADE;
+-- 1) Insertar cliente ficticio
+START TRANSACTION;
+
+INSERT INTO `erp_logistica`.`clientes`
+(id,`nombre_completo`)
+VALUES
+(99999,
+'Cliente ficticio'
+);
+
+-- 2) Actualizar la tabla con ese id de cliente
+SET SQL_SAFE_UPDATES = 0;
+UPDATE pedidos
+SET cliente_id = 99999 -- cliente ficticio
+WHERE cliente_id NOT IN  (select id from clientes);
+SET SQL_SAFE_UPDATES = 1;
+-- 3) alter table.
+SELECT * FROM clientes;
+ALTER TABLE pedidos
+	ADD CONSTRAINT fk_pedidos_clientes FOREIGN KEY(cliente_id)
+		REFERENCES clientes(id) ON DELETE RESTRICT ON UPDATE CASCADE;
+# Bloque 5:
+# Coalesce: Consolidacion de precios
+
+select * from productos;
+# Creamos la columna primero
+Alter table productos add column precio_final Decimal(10,2);
+
+Start TRANSACTION;
+Set SQL_SAFE_UPDATES=0;
+Update productos 
+# set precio_final = precio_oferta si puedo, si es null entonces cojo precio, si ese es null , 0
+Set precio_final = COALESCE(precio_oferta,precio,0);
+Set SQL_SAFE_UPDATES=1;
+commit;
