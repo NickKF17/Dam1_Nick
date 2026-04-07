@@ -24,6 +24,7 @@ static final int TAMANYO_REGISTRO=(TAMANYO_NOMBRE *2 )+4;
 		leerRegistro(fichero,4);
 		System.out.println();
 		eliminarRegistro(fichero, 4);
+		eliminarRegistro(fichero, 4);
 		leerRegistro(fichero, 4);
 		modificarRegistro(fichero, 4, "Elvira", 17);
 		leerTodosLosRegistros(fichero);
@@ -138,7 +139,7 @@ static final int TAMANYO_REGISTRO=(TAMANYO_NOMBRE *2 )+4;
 		try(RandomAccessFile raf = new RandomAccessFile(fichero,"rw")){	
 			long posicion=(posicionnatu-1)*TAMANYO_REGISTRO;
 			if(posicion>=raf.length()) {
-				System.out.println("El Registro "+ posicion +" no existe");
+				System.out.println("El Registro "+ posicionnatu +" no existe");
 				System.out.println("El registro mas alto es el "+ raf.length()/TAMANYO_REGISTRO);
 				
 			}
@@ -146,7 +147,7 @@ static final int TAMANYO_REGISTRO=(TAMANYO_NOMBRE *2 )+4;
 			
 			raf.seek(posicion);
 			if(raf.readChar()=='*') {
-					System.out.println("El registro "+posicion+" ya esta borrado");
+					System.out.println("El registro "+posicionnatu+" ya esta borrado");
 			}else {
 				raf.seek(posicion);
 			raf.writeChar('*');
