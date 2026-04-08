@@ -42,6 +42,7 @@ Set sql_safe_updates=1;
 COMMIT;
 #################################
 #################################1.2
+Set sql_safe_updates=0;
 Start Transaction;
 
 Update pacientes
@@ -80,5 +81,21 @@ Alter table pacientes
 modify column nif VARCHAR(30) Unique Not null;
 
 # explain pacientes;
-#################################
-select * from pacientes;
+################################# Acabado ejercicio 1
+################################# 2
+select * from medicos;
+Start Transaction;
+Update medicos
+set num_colegiado= replace(replace(num_colegiado,"/",""),"-","") where num_colegiado REGEXP ('^[0-9]');
+savepoint Sin_simbolos;
+update medicos 
+set num_colegiado = concat("COL-",substring(num_colegiado,1,2),"-",SUBSTRING(num_colegiado,3,4)) where num_colegiado REGEXP ('^[0-9]');
+savepoint Sin_simbolosdos;
+update medicos
+set num_colegiado = concat(substring(num_colegiado,1,3),"-",substring(num_colegiado,4,2),"-",substring(num_colegiado,6,4)) where num_colegiado RegEXP('[A-Z]{3}[0-9]{6}');
+savepoint Ultimo;
+Update medicos
+set num_colegiado= concat("PRO-28-",substring(num_colegiado,5,3),"9") where num_colegiado REGEXP('[A-Z]{3}-[0-9]{3}');
+commit;
+################################# Acabado ejercicio 2
+Set sql_safe_updates=1;
