@@ -25,66 +25,76 @@ public class Main {
 
 	}
 
-	public static void apuestaPorNumero(int num, String nombre, String fichero) throws Exception {
-		try (RandomAccessFile raf = new RandomAccessFile(fichero, "rw")) {
-			long posicion = (num - 1) * tamanyoRegistro;
 
-			if (num > numBoletos) {
-				System.out.println("El número " + num + " no está disponible");
-			} else {
-				raf.seek(posicion);
-				// Comprobar si está libre
-				char c = raf.readChar();
-				if (c != '*') {
-					System.out.println("Alguien ya ha cogido ese número");
-				} else {
-					raf.seek(posicion);
-					raf.writeInt(num);
-					escribirNombre(nombre, fichero);
-				}
-			}
-		}
+	public static void apuestaPorNumero(int num, String nombre, String fichero) throws Exception {
+	    try (RandomAccessFile raf = new RandomAccessFile(fichero, "rw")) {
+
+	        if (num < 1 || num > numBoletos) {
+	            System.out.println("Número no válido");
+	            return;
+	        }
+
+	        long pos = (num - 1) * tamanyoRegistro;
+	        raf.seek(pos);
+
+	        int estado = raf.readInt();
+	        if (estado != 0) {
+	            System.out.println("Ese número ya está cogido");
+	        }
+
+	        raf.seek(pos);
+	        raf.writeInt(num);
+	        escribirNombre(raf, nombre);
+	    }
 	}
+
 
 	public static void crearFichero(String fichero) throws Exception {
-		try (RandomAccessFile raf = new RandomAccessFile(fichero, "rw")) {
-
-			for (int i = 0; i <= numBoletos; i++) {
-				long posi = (i * tamanyoRegistro);
-				raf.seek(posi);
-				raf.writeChar('*');
-				/*
-				 * for(int j=0;j<tamanyoRegistro-1;j++) { raf.writeChar(' ');
-				 * 
-				 * }
-				 */
-			}
-		}
-
+	    try (RandomAccessFile raf = new RandomAccessFile(fichero, "rw")) {
+	        for (int i = 0; i < numBoletos; i++) {
+	            long pos = i * tamanyoRegistro;
+	            raf.seek(pos);
+	            raf.writeInt(0); // 0 = libre
+	            for (int j = 0; j < tamanyoNombre; j++) {
+	                raf.writeChar(' ');
+	            }
+	        }
+	    }
 	}
 
+
+
+	
 	public static void leerFichero(String fichero) throws Exception {
-		try (RandomAccessFile raf = new RandomAccessFile(fichero, "r")) {
-			String resultado = "";
-			for (int i = 0; i < tamanyoRegistro; i++) {
-				resultado += raf.readChar();
-			}
-			// .trim() quita los espacios que añadimos al final
-			System.out.println("Nombre: " + resultado.trim());
+	    try (RandomAccessFile raf = new RandomAccessFile(fichero, "r")) {
 
-		}
+	        for (int i = 0; i < numBoletos; i++) {
+	            long pos = i * tamanyoRegistro;
+	            raf.seek(pos);
+
+	            int numero = raf.readInt();
+	            StringBuilder nombre = new StringBuilder();
+
+	            for (int j = 0; j < tamanyoNombre; j++) {
+	                nombre.append(raf.readChar());
+	            }
+
+	            System.out.println("Boleto " + (i + 1) + ": " +
+	                (numero == 0 ? "LIBRE" : nombre.toString().trim()));
+	        }
+	    }
 	}
 
-	public static void escribirNombre(String nombre, String fichero) throws Exception {
-		try (RandomAccessFile raf = new RandomAccessFile(fichero, "rw")) {
-			for (int i = 0; i < tamanyoRegistro - 4; i++) {
-				if (i < nombre.length()) {
-					raf.writeChar(nombre.charAt(i));
-				} else {
-					raf.writeChar(' '); // Relleno para completar los 40 bytes
-				}
-			}
 
-		}
+	
+	public static void escribirNombre(RandomAccessFile raf, String nombre) throws Exception {
+	    for (int i = 0; i < tamanyoNombre; i++) {
+	        if (i < nombre.length()) {
+	            raf.writeChar(nombre.charAt(i));
+	        } else {
+	            raf.writeChar(' ');
+	        }
+	    }
 	}
+
 }
