@@ -1,3 +1,0 @@
-Bienvenidos a la práctica de Linux
-Este es el sgundo párrafo.
-Fin del documento.

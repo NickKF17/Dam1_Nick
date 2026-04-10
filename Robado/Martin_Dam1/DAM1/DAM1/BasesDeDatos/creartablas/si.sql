@@ -1,1 +1,0 @@
-INSERT INTO dni (numero_dni, id_persona) VALUES ('11111111A',1);
