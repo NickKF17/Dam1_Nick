@@ -1,0 +1,31 @@
+body {
+    background-color: #CFC;
+    color: #00f;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+    color: #F00;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 32px;
+}
+
+h2 {
+    color: #a00;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+}
+.datoslibr{
+    color: #060;
+}
+
+.sustantivos{
+    font-size: 20px;
+    
+}
+
+.acronimos{
+    color: #fff;
+    background-color: #000;
+}

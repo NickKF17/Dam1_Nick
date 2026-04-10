@@ -5,8 +5,8 @@ function capturarValores(){
     let password = document.querySelector("#idPassword").value
     let fecha = document.querySelector("#idFecha").value
     let hora = document.querySelector("#idHora").value
-    let radio = document.querySelector("#idRadio").value
-    let checkbox = document.querySelector("#idCheckbox").selected
+    let radio = document.querySelector("#idRadio").checked
+    let checkbox = document.querySelector("#idCheckbox").checked
     let select = document.querySelector("#idSelect").value
 
     let visualizar = "";

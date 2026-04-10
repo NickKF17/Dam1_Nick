@@ -1,0 +1,217 @@
+texto3.equals(texto5)
+equalsIgnoreCase
+cadenaVacia.isEmpty()
+
+El mÃ©todo indexOf devuelve la posiciÃ³n en la que aparece por primera vez la subcadena
+que va como argumento. Si no aparece devuelve -1
+		int posicion = texto6.indexOf("a");
+
+texto6.replace("O", "X")
+limpiar cadena
+    dni = dni.trim()
+
+	// Convertimos de texto a entero
+		int num1 = Integer.parseInt(textoEntero);
+		System.out.println(num1 + 5);
+
+	// Convertimos de texto a nÃºmero con decimales
+		double num2 = Double.parseDouble(textoDecimales);
+		System.out.println(num2 * 1.34);
+
+	// Convertimos de entero a texto
+		String texto1 = String.valueOf(entero);
+		System.out.println(texto1 + 5);
+
+// la forma de redondear con cifras decimales
+		final double pi = 3.14159;
+		System.out.println("Valor redondeado: " + (double)Math.round(pi * 100) /100);
+		System.out.println("Valor redondeado: " + (double)Math.round(pi * 1000) / 1000);
+		System.out.println("Valor redondeado: " + (double)Math.round(pi * 10000) / 10000);
+
+// Los mÃ©todos max y min me devuelven el mayor o el menor de dos nÃºmeros
+		int mayor = Math.max(35, 67);
+		System.out.println("El mayor es: " + mayor);
+		int menor = Math.min(35, 67);
+		System.out.println("El menor es: " + menor);
+
+
+
+// Para generar un nÃºmero aleatorio entre el 1 y el 6, por ejemplo, hacemos esto:
+		int dado = (int)(Math.random()*6)+1;
+		System.out.println("Tirada de dado de 6 caras: " + dado);
+		
+		// De forma genÃ©rica, para generar un nÃºmero aleatorio entre dos extremos
+		// ambos incluidos, lo hacemos asÃ­:
+		int inicio = 2;
+		int fin = 4;
+		int aleatorio = (int)(Math.random()*(fin-inicio+1)+inicio);
+
+
+//Esto es para usar el switch	
+switch(numero) {
+		  case 2:
+		    System.out.println("Es un patito");
+		    break;
+		  case 3:
+		    System.out.println("Es una serpiente");
+		    break;
+		  case 4:
+		    System.out.println("Es una silla");
+		    /* Este Ãºltomo break sobra porque ya termina la instrucciÃ³n, pero asÃ­ queda mas uniforme */
+		    break;
+		}
+
+expresiones regulares
+
+Pattern patron = Pattern.compile("\\d{8}");
+Matcher coincidencia = patron.matcher("28896");
+boolean coincidencia.find();
+boolean coincidencia.matcher();
+// Algunos ejemplos de patrones mas complejos:
+        String consonantes = "[A-ZÃ‘ && [^AEIOU]]{5}"; // valida cinco letras consonantes mayÃºsculas
+        if("QÃ‘ERT".matches(consonantes) == true)
+        	System.out.println("sÃ³lo tiene consonantes");
+
+
+	
+// AsÃ­ definimos un vector vacio de 5 enteros
+		int vector[] = new int[5];
+		// Y asÃ­ uno vacÃ­o de 10 cadenas de texto
+		String lista[] = new String[10];
+
+// Puedo crear un array de dos dimensiones de esta forma
+		int[][] matriz = new int[2][3];
+String[][] alumnos= {{"Ana", "Perez"}, {"Roberto", "LÃ³pez"}, {"Manuel", "PelÃ¡ez"}}
+
+// En el segundo array tambiÃ©n he cambiado el valor porque realmente tengo dos variables que apuntan al mismo sitio
+		for(String profe: otrosProfesores)
+			System.out.print(profe + ", ");
+		System.out.println("\n");
+			
+		// Si realmente quiero una copia independiente uso el mÃ©todo copyOf
+		String[] masProfesores = Arrays.copyOf(profesores,profesores.length);
+// sort ordena un array de forma ascendente si son nÃºmeros o alfabÃ©ticamente si son string
+		Arrays.sort(muchosMasProfesores);
+
+// binarySearch busca si un valor existe en el array, pero solo funciona si el array estÃ¡ ordenado
+		// devuelve la posiciÃ³n donde se encuentra el elemento o un valor menor de 0 si no estÃ¡
+		System.out.println(Arrays.binarySearch(muchosMasProfesores, "Fernando"));
+		if(Arrays.binarySearch(muchosMasProfesores, "Fernando") < 0)
+			System.out.println("No estÃ¡ en la lista de profes");
+		else
+			System.out.println("EstÃ¡ en la lista de profes");
+		
+		// fill sirve para rellenar todas las posiciones de un array con el mismo valor
+		int diasDelMes[] = new int[12];
+		Arrays.fill(diasDelMes,31);
+		for(int mes:diasDelMes)
+			System.out.print(mes + ", ");
+		System.out.println("\n");
+		
+		// toString convierte el contenido del array en una cadena de texto
+		String texto = Arrays.toString(muchosMasProfesores);
+		System.out.println(texto);
+		texto = texto.replace("[", "");
+		texto = texto.replace("]", "");
+		System.out.println(texto);
+//Para imprimir una cadena con matriz
+for (int i = 0; i < matriz.length; i++) {
+    for (int j = 0; j < matriz[i].length; j++) {
+        System.out.print(matriz[i][j] + " ");
+    }
+    System.out.println(); // salto de lÃ­nea al final de cada fila
+}
+
+
+O
+
+
+    for (String[] fila : matriz) {
+    for (String valor : fila) {
+        System.out.print(valor + " ");
+    }
+    System.out.println();
+}
+
+
+
+
+//PAra rellenar una matriz bidimensional
+            for (int i = 0; i < numFil; i++) {
+            Arrays.fill(matriz[i], "*");
+
+
+
+
+package primerTrimestre;
+
+public class impresion {
+
+	public static void main(String[] args) {
+		// Ya hemos visto print y println. La diferencia entre ambas
+		// es que en una se salta de línea al final y en la otra no
+		
+		System.out.println("Esto va en una línea");
+		System.out.println("Y esto en otra");
+		
+		System.out.print("Esto va en una línea");
+		System.out.print("  y esto en la misma que la anterior");
+		
+		// Cuando queremos forzar un salto de línea en cualquier sitio
+		// de la cadena que estamos imprimiendo ponemos \n
+		
+		System.out.println("\n\nResultados:\nBetis-Madrid: 1\nBarcelona: Atlético de Madrid: 2");
+		
+		// También hemos visto como dar en consola una salida en color rojo para indicar un error
+		System.err.println("Esto es un error");
+		System.err.print("Y esto también");
+		
+		// Existe una tercera instrucción que nos permite escribir con formato
+		// y se llama printf
+		
+		int numero = 45;
+		System.out.printf("%nEl número es %d\n", numero);
+		double precio = 123.44;
+		String codigo = "A23-Z";
+		System.out.printf("El precio es %f y la referencia, %s%n", precio, codigo);
+		String nombre="José María";
+		System.out.printf("Tu nombre empieza por %c%n", nombre.charAt(0));
+		
+		// %d indica que vamos a meter un enter, %f un número con decimales y %s un String
+		// Con %c indicamos un char
+		// printf no salta de línea al final. Podemos indicar los saltos de línea con \n o con %n
+		// Pero es mas recomendable hacerlo con %n
+		
+		// %S convierte la cadena a mayúsculas
+		
+		System.out.printf("Con mayúsculas: %S%n", nombre);
+		
+		// Podemos indicar el número de decimales que queremos. Redondea, no trunca
+		double pi = 3.14159;
+		System.out.printf("El valor de pi con tres decimales es %.3f%n", pi);
+		
+		// Tambien podemos indicar lo que va a ocupar el número y formatea alineando a la derecha
+		System.out.printf("%5d%n%5d%n%5d%n", 325, 2, 1234);
+		
+		// O a la izquierda
+		System.out.printf("%-5d €%n%-5d €%n%-5d €%n", 25, 2, 334);
+		
+		// Llenando con ceros a la izquierda
+		System.out.printf("%05d%n%05d%n%05d%n", 325, 2, 1234);
+		
+		// uniendo lo anterior con decimales para que quede todo perfectamente alineado
+		// fíjate que el primer número es el total que ocupa la cifra y la coma decimal cuenta como una
+		// si no le indicas suficiente espacio como para mostrar el número completo no quedará bien
+		System.out.printf("%7.2f%n%7.2f%n%7.2f%n", 325.3, 2.0, 1234.45);
+		
+		// Si indicamos un signo + nos muestra los números con signo tambień si son positivos
+		System.out.printf("%+d y %+d%n", -3, 55);
+		
+		// Y si ponemos un paréntesis los números negativos aparecen entre paréntesis
+		System.out.printf("%(d y %(d%n", -3, 55);
+		
+		// printf también se puede mostrar como error
+		System.err.printf("El valor de pi con tres decimales es %.3f%n", pi);
+	}
+
+}

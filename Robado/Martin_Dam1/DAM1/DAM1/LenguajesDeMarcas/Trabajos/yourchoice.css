@@ -1,0 +1,82 @@
+body{
+    font-family: sans-serif;
+    background-color: white;
+    
+}
+#prin h1{
+    text-align: center;
+  
+}
+#prin{
+background: rgba(175, 87, 40, 0.964);
+ border-radius:  0 2em ;
+    padding: 6px;
+
+}
+
+#nuestras{
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(175, 87, 40, 0.964);
+
+    border-radius: 2em 0;
+    padding: 10px;
+    margin: 1em;
+}
+.uno{
+    padding: 1em;
+    background-color: rgb(120,102, 102);
+    width:  450px;
+    height: 450px;
+    border-radius: 1em;
+    box-sizing: border-box;
+    margin: 2em;
+    text-align: center;
+    color: white;
+}
+.uno img{
+  width: 250px;
+  height: 250px;
+}
+.flex-nose{
+    display: flex ;
+    padding: 1em 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: white;
+
+}
+
+.marcasl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.marcas2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.marcasl img {
+  width: 150px;
+  height: 150px;
+}
+.rgrande {
+  width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.rgrande:hover {
+  transform: scale(1.2);
+}
+
+.rgrande:active {
+  transform: scale(1.3);
+}

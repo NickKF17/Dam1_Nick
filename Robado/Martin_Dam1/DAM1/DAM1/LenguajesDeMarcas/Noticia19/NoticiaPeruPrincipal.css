@@ -1,0 +1,114 @@
+header{
+    padding: 10px;
+    background-color: #add8e6;
+    text-align: center
+}
+header h1 {
+    font-size: 50px;
+}
+body{
+    background-color: rgb(231, 234, 234);
+}
+.contenedor-todo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.anuncio-prin {
+    margin-top: 200px;
+    height: 700px;
+    width: 150px;
+}
+.noticia-vengadores {
+    margin-top: 20px;
+    margin-left: 250px;
+    border: 3px solid black;
+    height: 200px;
+    width: 940px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+#texto-vengadores {
+    width: 400px;
+    margin-left: 40px;
+    text-align: left;
+    margin-top: 26px;
+    font-size: 11px;
+}
+#img-vengadores{
+    width: 500px;
+    height: 100px;
+}
+
+.noticia-grinch {
+    margin-left: 250px;
+    margin-top: 20px;
+    border: 3px solid black;
+    height: 200px;
+    width: 940px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+#texto-grinch{
+    width: 400px;
+    margin-left: 40px;
+    text-align: left;
+    margin-top: 25px;
+    font-size: 11px;
+}
+#img-grinch{
+    height: 100px;
+    width: 500px;
+}
+
+.noticia-oso {
+    margin-bottom: 20px;
+    margin-left: 250px;
+    margin-top: 20px;
+    border: 3px solid black;
+    height: 200px;
+    width: 940px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+#texto-oso {
+    width: 400px;
+    margin-left: 40px;
+    text-align: left;
+    margin-top: 14px;
+    font-size: 11px;
+}
+#img-oso {
+    height: 100px;
+    width: 500px;
+}
+a{
+    color: rgb(10, 10, 82);
+    text-decoration: none;
+    
+}
+.texto-desc {
+    font-size: 11px;
+}
+.noticias-contenedor {
+    background:linear-gradient(30deg,rgb(88, 175, 246),rgb(181, 222, 255),rgb(254, 255, 255));
+    width: 1500px;
+    border-radius: 10px;
+    border: 1px solid;
+    height: 705px;
+}
+#noticia-vengadores-id{
+    background:linear-gradient(30deg, rgb(254, 255, 255),rgb(181, 222, 255),rgb(88, 175, 246));
+}
+#noticia-grinch-id{
+    background:linear-gradient(30deg, rgb(254, 255, 255),rgb(181, 222, 255),rgb(88, 175, 246));
+}
+#noticia-oso-id{
+    background:linear-gradient(30deg, rgb(254, 255, 255),rgb(181, 222, 255),rgb(88, 175, 246));
+}

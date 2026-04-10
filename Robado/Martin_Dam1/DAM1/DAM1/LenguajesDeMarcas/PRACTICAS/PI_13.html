@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tuenti</title>
+    <link rel="stylesheet" href="PI_13.css">
+</head>
+<body>
+  <div class="Mainbos">
+    <div class="logo">
+      <img src="tuenti.png" alt="" width="35%">
+    </div>
+    <div class="content cFlex">
+        <div class="cabecera">
+            <div class="titulo">
+                <h1>Únete a Tuenti <span>Todos los campos son obligatorios</span></h1>
+            </div>
+            <div class="seleccionIdioma">
+                <select name="idioma" id="idioma">
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+        <div class="formulario">
+            <form action="nosexd.html" method="post" >
+                <div class="campos">
+                  <div class="nombreFlex">
+                    <label for="name">
+                        Nombre:
+                    </label>
+                    <input type="text" placeholder="Nombre" name="user_name" required>
+                    <input type="text" placeholder="Apellido" name="user_name" required>
+                    <br>
+                  </div>
+                  <div class="nombreFlex">
+                    <label for="mail">
+                        Email:
+                    </label>
+                    <input type="email" id="email" name="user_email" required>
+                    <br>
+                  </div>
+                  <div class="nombreFlex">
+                    <label for="sexo">
+                        Sexo 
+                    </label>
+                    <input type="radio" id="onvre" name="setso" value="Hombre">
+                    <label for="Hombre">Hombre</label>
+                    <input type="radio" id="mujeh" name="setso" value="Mujer">
+                    <label for="Mujer">Mujer</label>
+                    <br>
+                  </div>
+                    <div class="nombreFlex">
+                       <label for="nacimiento">
+                        Fecha de Nacimiento
+                    </label>
+                    <input class="nacimiento" list="dia" name="nacimiento" placeholder="Día" required>
+                    <datalist id="dia">
+                        <option value="1"></option>
+                        <option value="2"></option>                        
+                        <option value="3"></option>    
+                        <option value="4"></option>    
+                        <option value="5"></option>
+                        <option value="6"></option>    
+                        <option value="7"></option>
+                        <option value="8"></option>
+                        <option value="9"></option>
+                        <option value="10"></option>
+                        <option value="11"></option>
+                        <option value="12"></option>
+                        <option value="13"></option>
+                        <option value="14"></option>
+                        <option value="15"></option>
+                        <option value="16"></option>
+                        <option value="17"></option>
+                        <option value="18"></option>    
+                        <option value="19"></option>
+                        <option value="20"></option>
+                        <option value="21"></option>
+                        <option value="22"></option>
+                        <option value="23"></option>
+                        <option value="24"></option>
+                        <option value="25"></option>
+                        <option value="26"></option>
+                        <option value="27"></option>
+                        <option value="28"></option>
+                        <option value="29"></option>
+                        <option value="30"></option>
+                        <option value="31"></option>
+                    </datalist>
+                    <input class="nacimiento" list="mes" placeholder="Mes" name="nacimiento" required>
+                    <datalist id="mes">
+                        <option value="Enero"></option>
+                        <option value="Febrero"></option>
+                        <option value="Marzo"></option>
+                        <option value="Abril"></option>
+                        <option value="Mayo"></option>
+                        <option value="Junio"></option>
+                        <option value="Julio"></option>
+                        <option value="Agosto"></option>
+                        <option value="Septiembre"></option>
+                        <option value="Octubre"></option>
+                        <option value="Noviembre"></option>
+                        <option value="Diciembre"></option>
+                    </datalist>
+                    <input class="nacimiento" list="anyo" placeholder="Año" name="nacimiento" required>
+                    <datalist id="anyo">
+                        <option value="2025"></option>
+                        <option value="2024"></option>
+                        <option value="2023"></option>
+                        <option value="2022"></option>
+                    </datalist>
+                    
+                    <br>
+                    </div>
+                   <p class="anyos">La edad minima es 14.</p>
+                    <div class="nombreFlex">
+                      <label for="contrasenya">
+                        Contraseña
+                    </label>
+                    <input type="password" id="contrasenya" name="contrasenya" required>
+                    <br>
+                    </div>
+                   <p class="consejos">
+                    <a href="https://www.youtube.com/watch?v=_9bj-NnCG3E" target="_blank">
+                        Consejos para elegir una contraseña
+                    </a>
+                    </p>
+                    <div class="nombreFlex">
+                       <label for="Tel">
+                        Número de Móvil
+                    </label>
+                    <select name="num" id="cod_num" required>
+                        <option value="34">+34 E</option>
+                    </select>
+                    <input type="tel" name="num" id="num" pattern="[67]{1}[0-9]{8}" maxlength="9" required>
+                    </div>
+                   
+                </div>
+                <div class="politicas">
+                    <label>
+                        <input type="checkbox" id="politicas_priv" value="politicas_priv" required/> 
+                        Aceptas las <a href="www.ticarte.com." target="_blank">Condiciones de uso</a> y la <a href="www.ticarte.com." target="_blank">Política de pivacidad</a> de Tuenti y que Tuenti te 
+                        envíe comunicaciones, incluso por vía electrónica.
+                        Lee un resumen en el <a href="www.ticarte.com." target="_blank">Decálogo de las Condiciones de uso</a>
+
+                    </label>
+                        <br />
+                </div>
+
+                <div class="boton">
+                  <input type="submit" value="Disfruta de Tuenti!">
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+  
+
+</body>
+</html>

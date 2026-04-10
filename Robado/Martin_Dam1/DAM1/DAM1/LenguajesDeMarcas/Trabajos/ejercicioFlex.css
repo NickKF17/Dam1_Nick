@@ -1,0 +1,55 @@
+body{
+    font-family: sans-serif;
+    background-color: rgba(213, 218, 255, 0.824);
+    padding: 10px;
+}
+.flex-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 1.5em;
+    justify-content: center;
+    
+}
+
+h1, h2{
+    color: #06a;
+}
+.card{
+    padding: 20px;
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 0 1em 1.5em;
+}
+.header h1{
+    font-size: 2em;
+}
+.author{
+    font-style: italic;
+}
+.header{
+    text-align: center;
+    width: 45%;   
+}
+.chapter{
+    width: 45%;
+    margin: auto;
+}
+.chapter h2:last-child{
+   font-size: 1em;
+   color: black;
+   
+}
+
+.text-block p{
+    text-align: justify;
+    margin: 10px;
+    padding: 20px;
+    background-color: #06a1;
+    border-left: 5px solid #48e;
+    border-bottom-left-radius: 1em;
+    border-top-left-radius: 1em;
+    
+}
+.text-block{
+    margin: auto
+}

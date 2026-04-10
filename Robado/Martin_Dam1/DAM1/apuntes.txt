@@ -1,0 +1,434 @@
+texto3.equals(texto5)
+equalsIgnoreCase
+cadenaVacia.isEmpty()
+
+El mÃ©todo indexOf devuelve la posiciÃ³n en la que aparece por primera vez la subcadena
+que va como argumento. Si no aparece devuelve -1
+		int posicion = texto6.indexOf("a");
+
+texto6.replace("O", "X")
+limpiar cadena
+    dni = dni.trim()
+
+	// Convertimos de texto a entero
+		int num1 = Integer.parseInt(textoEntero);
+		System.out.println(num1 + 5);
+
+	// Convertimos de texto a nÃºmero con decimales
+		double num2 = Double.parseDouble(textoDecimales);
+		System.out.println(num2 * 1.34);
+
+	// Convertimos de entero a texto
+		String texto1 = String.valueOf(entero);
+		System.out.println(texto1 + 5);
+
+// la forma de redondear con cifras decimales
+		final double pi = 3.14159;
+		System.out.println("Valor redondeado: " + (double)Math.round(pi * 100) /100);
+		System.out.println("Valor redondeado: " + (double)Math.round(pi * 1000) / 1000);
+		System.out.println("Valor redondeado: " + (double)Math.round(pi * 10000) / 10000);
+
+// Los mÃ©todos max y min me devuelven el mayor o el menor de dos nÃºmeros
+		int mayor = Math.max(35, 67);
+		System.out.println("El mayor es: " + mayor);
+		int menor = Math.min(35, 67);
+		System.out.println("El menor es: " + menor);
+
+
+
+// Para generar un nÃºmero aleatorio entre el 1 y el 6, por ejemplo, hacemos esto:
+		int dado = (int)(Math.random()*6)+1;
+		System.out.println("Tirada de dado de 6 caras: " + dado);
+		
+		// De forma genÃ©rica, para generar un nÃºmero aleatorio entre dos extremos
+		// ambos incluidos, lo hacemos asÃ­:
+		int inicio = 2;
+		int fin = 4;
+		int aleatorio = (int)(Math.random()*(fin-inicio+1)+inicio);
+
+
+//Esto es para usar el switch	
+switch(numero) {
+		  case 2:
+		    System.out.println("Es un patito");
+		    break;
+		  case 3:
+		    System.out.println("Es una serpiente");
+		    break;
+		  case 4:
+		    System.out.println("Es una silla");
+		    /* Este Ãºltomo break sobra porque ya termina la instrucciÃ³n, pero asÃ­ queda mas uniforme */
+		    break;
+		}
+
+expresiones regulares
+
+Pattern patron = Pattern.compile("\\d{8}");
+Matcher coincidencia = patron.matcher("28896");
+boolean coincidencia.find();
+boolean coincidencia.matcher();
+// Algunos ejemplos de patrones mas complejos:
+        String consonantes = "[A-ZÃ‘ && [^AEIOU]]{5}"; // valida cinco letras consonantes mayÃºsculas
+        if("QÃ‘ERT".matches(consonantes) == true)
+        	System.out.println("sÃ³lo tiene consonantes");
+
+
+	
+// AsÃ­ definimos un vector vacio de 5 enteros
+		int vector[] = new int[5];
+		// Y asÃ­ uno vacÃ­o de 10 cadenas de texto
+		String lista[] = new String[10];
+
+// Puedo crear un array de dos dimensiones de esta forma
+		int[][] matriz = new int[2][3];
+String[][] alumnos= {{"Ana", "Perez"}, {"Roberto", "LÃ³pez"}, {"Manuel", "PelÃ¡ez"}}
+
+// En el segundo array tambiÃ©n he cambiado el valor porque realmente tengo dos variables que apuntan al mismo sitio
+		for(String profe: otrosProfesores)
+			System.out.print(profe + ", ");
+		System.out.println("\n");
+			
+		// Si realmente quiero una copia independiente uso el mÃ©todo copyOf
+		String[] masProfesores = Arrays.copyOf(profesores,profesores.length);
+// sort ordena un array de forma ascendente si son nÃºmeros o alfabÃ©ticamente si son string
+		Arrays.sort(muchosMasProfesores);
+
+// binarySearch busca si un valor existe en el array, pero solo funciona si el array estÃ¡ ordenado
+		// devuelve la posiciÃ³n donde se encuentra el elemento o un valor menor de 0 si no estÃ¡
+		System.out.println(Arrays.binarySearch(muchosMasProfesores, "Fernando"));
+		if(Arrays.binarySearch(muchosMasProfesores, "Fernando") < 0)
+			System.out.println("No estÃ¡ en la lista de profes");
+		else
+			System.out.println("EstÃ¡ en la lista de profes");
+		
+		// fill sirve para rellenar todas las posiciones de un array con el mismo valor
+		int diasDelMes[] = new int[12];
+		Arrays.fill(diasDelMes,31);
+		for(int mes:diasDelMes)
+			System.out.print(mes + ", ");
+		System.out.println("\n");
+		
+		// toString convierte el contenido del array en una cadena de texto
+		String texto = Arrays.toString(muchosMasProfesores);
+		System.out.println(texto);
+		texto = texto.replace("[", "");
+		texto = texto.replace("]", "");
+		System.out.println(texto);
+//Para imprimir una cadena con matriz
+for (int i = 0; i < matriz.length; i++) {
+    for (int j = 0; j < matriz[i].length; j++) {
+        System.out.print(matriz[i][j] + " ");
+    }
+    System.out.println(); // salto de lÃ­nea al final de cada fila
+}
+
+
+O
+
+
+    for (String[] fila : matriz) {
+    for (String valor : fila) {
+        System.out.print(valor + " ");
+    }
+    System.out.println();
+}
+
+
+
+
+//PAra rellenar una matriz bidimensional
+            for (int i = 0; i < numFil; i++) {
+            Arrays.fill(matriz[i], "*");
+
+
+
+-----------------------------------------------------------------
+Algoritmos de ordenacion
+
+
+
+------------------------------------------------------------------
+
+cosas de diccionarios
+
+public class Diccionarios {
+	public static void main(String[] args) {
+		// El primer elemento (String) es la clave y el segundo (Double) el valor
+		// Lógicamente podemos poner lo que queramos en cada uno de ellos
+		HashMap<String, Double> fruteria = new HashMap<>();
+		
+		// cargamos el diccionario
+		fruteria.put("Manzanas Golden", 12.54);
+		fruteria.put("Fresas", 25.30);
+		fruteria.put("Peras de agua", 9.33);
+		
+		// Si uso put con una clave que ya existe no da error ni crea una nueva: sobreescribe el valor
+		fruteria.put("Peras de agua", 10.25);
+		
+		// Podemos crear diccionarios con cualquier tipo de clave y de valor
+		HashMap<Integer, String> personas = new HashMap<>();
+		personas.put(655112233, "José María Morales");
+		
+		HashMap<String, String> personas2 = new HashMap<>();
+		personas2.put("28888777X", "José María Morales");
+
+		// O incluso con objetos
+		HashMap<Integer, Ejemplo> objetos = new HashMap<>();
+		Ejemplo ej1 = new Ejemplo();
+		objetos.put(1, ej1);
+
+		HashMap<Ejemplo, String> objetos2 = new HashMap<>();
+		objetos2.put(ej1, "HOLA");
+		
+		// Podemos comprobar previamente si el elemento existe así:
+		if(fruteria.containsKey("Fresas"))
+			System.out.println("Ya tengo fresas");
+		else
+			fruteria.put("Fresas", 25.30);
+		
+		// accedemos a los elementos a través de su clave (el primer valor)
+		System.out.printf("El precio de las Fresas es de %.2f€\n", fruteria.get("Fresas"));
+		
+		// Recorrer el diccionario es diferente al resto de las colecciones
+		// Al igual que ocurría con HashSet tampoco se mantiene el orden de los elementos
+		// Recorrido completo (claves y valores)
+		for(Map.Entry<String, Double> producto : fruteria.entrySet())
+			System.out.printf("Producto: %s: %.2f\n", producto.getKey(), producto.getValue());
+		
+		// Solo claves
+		for (String producto : fruteria.keySet()) {
+		    System.out.println("Producto: " + producto);
+		}
+		
+		// Solo valores
+		for (Double precio : fruteria.values()) {
+			System.out.println("Precio: " + precio);
+		}
+		
+		// Y otro método usando funciones lambda (que aún no hemos visto!)
+		fruteria.forEach((fruta, precio) -> System.out.println(fruta + ": " + precio + "€"));
+
+		// Y para usar un Iterator
+        Iterator<Map.Entry<String, Double>> iterador = fruteria.entrySet().iterator();
+        while (iterador.hasNext()) {
+            Map.Entry<String, Double> producto = iterador.next();
+			System.out.printf("Producto: %s: %.2f\n", producto.getKey(), producto.getValue());
+        }
+        
+        // O así mas fácil, usando un Iterator solo con las claves (y obteniendo el valor)
+        System.out.println("\nIterar solo las claves y obtener el valor:");
+        Iterator<String> itClaves = fruteria.keySet().iterator();
+        while (itClaves.hasNext()) {
+            String producto = itClaves.next();
+			System.out.printf("Producto: %s: %.2f\n", producto, fruteria.get(producto));
+        }
+		
+		// Y para eliminar un elemento usamos remove
+		fruteria.remove("Manzanas Golden");
+		
+		if(!fruteria.containsKey("Manzanas Golden"))
+			System.out.println("No hay Manzanas Golden");
+		
+		// O podemos borrar de una vez todas las entradas que cumplen una condición en su valor
+		fruteria.entrySet().removeIf(entrada -> entrada.getValue() < 15);
+		
+        System.out.println("\nDespués de borrar todas las que tienen precio menor a 15:");
+		for(Map.Entry<String, Double> producto : fruteria.entrySet())
+			System.out.printf("Producto: %s: %.2f\n", producto.getKey(), producto.getValue());
+	}
+}
+
+-----------------------------------------------------------------------------------------------------
+HashSet
+
+package segundoTrimestre;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+
+/*
+ * HashSet es una colección que almacena elementos únicos (sin duplicados). Usa una tabla hash para acceso rápido
+ * No mantiene el orden de inserción. 
+ * Se usa para operaciones eficientes de búsqueda cuando no importa el orden, se busca rendimiento y no queremos duplicados 
+ */
+
+public class Conjuntos {
+	public static void main(String[] args) {
+		// Creamos un conjunto vacío y añadimos elementos
+		HashSet<String> alumnos = new HashSet<>();
+		alumnos.add("Alfonso Litario");
+		alumnos.add("Esteban Dolero");
+		alumnos.add("Héctor Nudo");
+		alumnos.add("Penelope Ligro");
+		alumnos.add("Estela Gartija");
+
+		// O lo creo ya con elementos
+		HashSet<String> profes = new HashSet<>(Arrays.asList("José María Morales", "Natalia Matarranz", "Yago Navarrete", "Eduardo Moreno"));
+
+		// Podemos ver que no se guardan en el mismo orden que se añaden		
+		System.out.println(alumnos);
+		System.out.println(profes);
+		
+		// Añado elementos con add y los elimino con remove.
+		// Aqui remove no puede ser nunca la posición porque no controlamos el orden!
+		
+		profes.remove("Yago Navarrete");
+		profes.add("Félix Sotelo");
+		System.out.println(profes);
+		
+		// Si trato de añadir un elemento repetido o borrar uno que no existe no pasa nada pero me devuelve false
+		System.out.println(profes.add("Eduardo Moreno"));
+		System.out.println(profes.remove("Héctor Estella"));
+
+		// Con contains compruebo si un elemento está o no en el conjunto
+		if(alumnos.contains("Héctor Nudo"))
+			System.out.println("El alumno está en el conjunto");
+
+		// Puedo ver el tamaño del conjunto con size
+		System.out.println("En el conjunto hay " + alumnos.size() + " alumnos");
+		
+		// Para recorrer un conjunto puedo usar iteradores o la forma común ya conocida.
+		for(String alumno:alumnos)
+			System.out.println(alumno);
+		
+		// No hay orden, pero como tengo el tamaño puedo hacer esto también:
+		int i=0;
+		for(String p:profes) {
+			if(i!= profes.size()-1)
+				System.out.print(p + ", ");
+			else
+				System.out.println(p);
+			i++;
+		}
+		
+		// Si convierto un ArrayList en HashSet elimino los duplicados fácilmente
+		ArrayList<Integer> numeros = new ArrayList<>(List.of(1,2,4,4,5,2,7,3,8,3,9,1,3,5));
+		HashSet<Integer> numerosUnicos = new HashSet<>(numeros);
+		System.out.println(numerosUnicos);
+		// Y luego puedo volver a convertirlo en ArrayList ya sin duplicados si así lo quiero
+		numeros = new ArrayList<>(numerosUnicos);
+		System.out.println(numeros);
+		
+		// Para duplicar un conjunto: 
+		HashSet<String> personas = new HashSet<>(alumnos);
+		
+		// Puedo hacer operaciones entre conjuntos:
+		// Union:
+		personas.addAll(profes);
+		System.out.println(personas);
+		
+		// Interseccion:
+		personas.retainAll(profes);
+		System.out.println(personas);
+		
+		// Diferencia:
+		personas.removeAll(profes);
+		System.out.println(personas);
+		
+		// subconjunto. Devuelve true si un conjunto tiene todos los elementos del otro
+		personas.add("Félix Sotelo");
+		System.out.println(profes.containsAll(personas));
+		
+		// Pasar de array a HashSet
+		String[] nombres = {"Pepe", "Juan", "Eva", "Ana"};
+		HashSet<String> setNombres = new HashSet<>(Arrays.asList(nombres));
+		System.out.println(setNombres);
+		
+		// Un array de enteros no es tan sencillo ya que no coinciden los tipos Int-Integer
+		// Lo mas fácil es hacerlo con un bucle como en ArrayList
+		// Este método funciona también con cualquier tipo
+		int[] arrayNumeros = {1,23,5,7,5, 9};
+		HashSet<Integer> listaNumeros = new HashSet<>();
+		for(int n:arrayNumeros)
+			listaNumeros.add(n);
+		System.out.println(listaNumeros);
+		
+		// Pasar un HashSet a Array
+		HashSet<String> frutasSet = new HashSet<>(Arrays.asList("Pera", "Manzana", "Fresa"));
+		String[] frutasArray = frutasSet.toArray(new String[0]);
+		for (String f: frutasArray)
+			System.out.print(f + " - ");
+		
+		System.out.println("---");
+		
+		// De enteros tenemos el mismo problema de siempre con la conversion Integer-Int
+		// Es mas fácil con un bucle
+		int masNumeros[] = new int[listaNumeros.size()];
+		int j=0;
+		for(int n:listaNumeros) {
+			masNumeros[j] = n;
+			j++;
+		}
+		for (int n: masNumeros)
+			System.out.print(n + " - ");
+		
+	}
+}
+-----------------------------------------------------------------------------------------------
+public class Listas2 {
+	public static void main(String[] args) {
+		ArrayList<Integer> numeros = new ArrayList<>();
+		// addAll me permite hacer una carga rápida de elementos
+		Collections.addAll(numeros, 73, 30, 1, 22, 33, 15, 20, 34, 8, 22, 12, 40);
+		System.out.println(numeros);
+		
+		// sort ordena de mayor a menor
+		Collections.sort(numeros);
+		System.out.println(numeros);
+		
+		// Sobre una lista ordenada es mucho mas rapido buscar con binarySearch
+		// OJO: si la lista no está ordenada no funcionará
+		// Sólo tiene sentido con listas enooooormes. En otras no notaremos la mejora
+		int posicion = Collections.binarySearch(numeros, 34);
+		if(posicion >= 0)
+			System.out.println("El elemento está en la posicion: " + posicion);
+		else
+			System.out.println("El elemento no está en la lista");
+		
+		// reverse invierte el orden de la lista (después de un sort ordena de mayor a menor)
+		Collections.reverse(numeros);
+		System.out.println(numeros);
+		
+		// shuffle mezcla aleatoriamente los elementos
+		Collections.shuffle(numeros);
+		System.out.println(numeros);
+		
+		// por último, max y min encuentran el mayor y el menor
+		int maximo = Collections.max(numeros);
+        int minimo = Collections.min(numeros);
+        System.out.printf("Mayor: %d - Menor: %d\n", maximo, minimo);
+        
+        int veces = Collections.frequency(numeros, 22);
+        System.out.println("El número 22 aparece " + veces + " veces");
+		
+        
+        // Estos ejemplos sirven con listas con otros tipos de elementos... pero habría que estudiar con objetos como funciona en cada caso!
+        ArrayList<String> alumnos = new ArrayList<>();
+		Collections.addAll(alumnos, "Eva", "Pepe", "Andrés", "Aurora");
+		Collections.shuffle(alumnos);
+		System.out.println(alumnos);
+		System.out.println(Collections.max(alumnos));
+		System.out.println(Collections.min(alumnos));
+		Collections.reverse(alumnos);
+		System.out.println(alumnos);
+		Collections.sort(alumnos);
+		System.out.println(alumnos);
+	}
+	
+}
+-----------------------------------------------------------------------------------------
+para shuflearte cosas
+    public static <T> void mezclar(ArrayList<T> lista) {
+        Random random = new Random();
+
+        for (int i = lista.size() - 1; i > 0; i--) {
+            int j = random.nextInt(i + 1);
+
+            // Intercambiar elementos
+            T temp = lista.get(i);
+            lista.set(i, lista.get(j));
+            lista.set(j, temp);
+        }
+    }

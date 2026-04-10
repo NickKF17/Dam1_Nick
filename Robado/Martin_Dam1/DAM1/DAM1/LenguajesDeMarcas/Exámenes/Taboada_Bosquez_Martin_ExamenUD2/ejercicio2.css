@@ -1,0 +1,43 @@
+body{
+    background: #000;
+    font-family: sans-serif;
+}
+h1::first-letter{
+    
+    font-size: 9em;
+    
+}
+h1{
+    color: orange;
+text-align: center;
+font-size: 3em;
+
+}
+
+.post{
+    
+    padding: 2em ;
+    color: white;
+    border-style: solid;
+    
+    
+}
+
+.descripcion{
+    
+    color: white;
+    text-align: justify;
+
+}
+.anuncio{
+    padding: 2em ;
+    border-style: solid;
+    border-color: red;
+}
+.anuncio h2{
+color: red;
+text-align: right;
+}
+#promocionado{
+color: gold;
+}

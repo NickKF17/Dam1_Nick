@@ -24,7 +24,10 @@ public class Ejercicio1 {
 			
 		for(Map.Entry<Integer, String> anime : diccionario.entrySet()) {
 				System.out.println(anime.getValue());
-			
+			if(lista==null) {
+				System.out.println("No hay personajes");
+			}
+			else {
 				lista=listapersonajes(anime.getKey(), personajes);
 				for(String num : lista) {
 				int num2=Integer.parseInt(num.substring(0,num.indexOf(" ")));
@@ -34,6 +37,7 @@ public class Ejercicio1 {
 				}
 				
 				}
+			}
 				}
 		System.out.println("Personajes sin anime");
 		for(Map.Entry<Integer, String> anime : diccionario.entrySet()) {

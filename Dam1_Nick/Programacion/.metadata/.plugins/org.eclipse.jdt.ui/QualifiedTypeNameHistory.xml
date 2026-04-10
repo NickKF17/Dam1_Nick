@@ -7,11 +7,16 @@
     <fullyQualifiedTypeName name="com.sun.tools.classfile.CharacterRangeTable_attribute.Entry"/>
     <fullyQualifiedTypeName name="java.nio.file.Files"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
-    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
     <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
     <fullyQualifiedTypeName name="java.io.RandomAccessFile"/>
     <fullyQualifiedTypeName name="java.lang.IndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="jdk.internal.misc.FileSystemOption"/>
     <fullyQualifiedTypeName name="sun.jvm.hotspot.tools.SysPropsDumper"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+    <fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
+    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,16 @@
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+        "LOL LOL Minecraft GTAVI"
+        "LOL LOL DBZBT3 DBZBT3"
+        "Rocket-league Roblox Roblox ALAVERGA";
+}
+
+.grid-container div{
+    border: solid;
+    text-align: center;
+}
+
+.grid-container .LOL{
+    grid-area: LOL;
+}

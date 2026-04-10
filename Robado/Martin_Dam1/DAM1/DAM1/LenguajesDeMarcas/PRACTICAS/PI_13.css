@@ -1,0 +1,142 @@
+body{
+    background-color: #007ac2;
+    font-family: sans-serif;
+}
+.Mainbos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    width: 100%;
+    
+    flex-direction: column;
+}
+.logo{
+       display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    width: 100%;
+    justify-content: center;
+    margin: 1em auto;
+
+}
+
+.cFlex{
+      display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    width: 100%;
+    justify-content: center;
+    margin: 1em auto;
+}
+.content{
+    width: 700px;
+    background-color: white;
+    padding: 2em;
+}
+
+.cabecera{
+ display:flex;
+    flex-wrap:wrap;
+    gap: 1.5em;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.titulo{
+    font-size: 0.7em;
+}
+.titulo span{
+    font-weight: 200;
+    font-size: 0.5em;
+    color: gray;
+}
+.seleccionIdioma{
+   font-size: 0.6em;
+}
+.seleccionIdioma select{
+    border-style: none;
+    color: #007ac2 ;
+    background-color: white;
+}
+
+.seleccionIdioma select:hover{
+    color: #75bce5;
+}
+
+.nombreFlex{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.4em;
+}
+.nombreFlex input{
+    padding: 0.5em;
+}
+.campos{
+     display: flex;
+    flex-wrap: wrap;
+    gap:  1em;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1em auto;
+   width: 85%;
+}
+#email{
+    width: 60%;
+}
+.formulario{
+  padding: 0 5em;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.nacimiento{
+    width: 30%;
+}
+.anyos{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 0.7em;
+    font-weight:100
+}
+.consejos{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 0.7em;
+}
+.politicas{
+    text-align: justify;
+    margin: 2.3em 0;
+}
+.boton{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: right;
+}
+.boton input:hover{
+    background-color: #1184c7;
+     transform: scale(1.05);
+}
+
+.boton input{
+    background-color: #007ac2;
+    border-radius: 0.3em 0.3em;
+    width: 14em;
+    height: 3em;
+    border-style: none;
+    font-weight: 900;
+    color: white;
+}
+a{
+    color: #007ac2;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #1184c7;
+    text-decoration: underline;
+}

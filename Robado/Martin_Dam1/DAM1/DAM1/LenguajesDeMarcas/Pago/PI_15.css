@@ -1,0 +1,89 @@
+body {
+    font-family: Verdana;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.main {
+    width: 70%;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.rojo {
+    color: red;
+    font-size: smaller;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0 20px 0;
+    padding: 15px 30px 15px 15px;
+}
+
+legend {
+    font-weight: bolder;
+}
+
+.grupo-input {
+    margin-bottom: 15px;
+    display: flex;
+   
+}
+
+label {
+    width: 180px;
+}
+
+input[type="text"],input[type="email"], input[type="password"], input[type="tel"], input[type="date"], select, textarea {
+    padding: 5px;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+.grupo-metodo select {
+    padding: 5px 5px 15px;
+}
+
+.grupo-input textarea {
+    height: 5em;
+}
+
+.zona-botones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+select {
+    background-color: white;
+}
+
+.boton:first-child {
+    background-color: #f0ad4e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+        }
+.boton:last-child {
+    background-color: #fff;
+    color: #f0ad4e;
+    border: 1px solid #f0ad4e;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+            
+        }
+

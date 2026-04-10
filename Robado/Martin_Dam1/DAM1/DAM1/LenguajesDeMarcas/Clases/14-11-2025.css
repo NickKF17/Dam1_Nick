@@ -1,0 +1,17 @@
+.verde { background-color: green;
+width: 50%;
+margin: 50px;
+border: red dotted 25px;}
+.rojo{
+    background-image: url(https://everydayastronaut.com/wp-content/uploads/2020/11/Starship-Variants.png);
+    height: 500px;
+    width: 50%;
+    margin: -30px;
+}
+span{
+    color: brown;
+}
+h1{
+    margin: 0px;
+    padding: 0px;
+}

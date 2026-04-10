@@ -1,0 +1,75 @@
+body{
+    background-color: white;
+    color: white;
+    font-family: sans-serif;
+}
+.titulo{
+    background: rgba(175, 87, 40, 0.964);
+    border-radius:  0 2em ;
+    padding: 6px;
+
+}
+
+.recuadros{
+    height: 30%;
+    width: 30%;
+    background-color: rgb(120,102, 102);
+    padding: 2em;
+    border-radius: 1em;
+    margin: 2em;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.recuadros h2{
+    margin: 0.4em auto;
+    padding: 0.5em;
+    font-size: 20px;
+    
+    border-bottom: 5px solid rgb(90, 71, 71);
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    
+
+}
+
+.recuadros p{
+    margin: auto;
+    padding: 0.2em;
+    background-color: rgb(90, 71, 71);
+    border-radius: 0.4em 0;
+}
+.recuadros img{
+    height: 70%;
+    width: 70%;
+}
+
+
+.contenedor-flex{
+    display: flex ;
+    padding: 1em 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.contenedor-grande{
+    margin: auto;
+    padding: 1em;
+    box-sizing: content-box;
+    width: 85%;
+    height: 85%;
+}
+
+.return{
+    background: rgba(175, 87, 40, 0.964);
+    border-radius:  0 2em ;
+    padding: 4px;
+    margin: left;
+    width: 20%;
+}
+a {
+  color: white; /* Azul por defecto */
+  text-decoration: none; /* Quita el subrayado */
+}

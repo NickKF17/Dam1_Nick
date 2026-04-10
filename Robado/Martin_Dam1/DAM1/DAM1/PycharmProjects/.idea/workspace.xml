@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="39363255-c751-4db9-b54f-e7dfc52543a3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../BasesDeDatos/practicaRA3d-taboada-martin.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../BasesDeDatos/practicaRA3d-taboada-martin.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LenguajesDeMarcas/PRACTICAS/PI_01.html" beforeDir="false" afterPath="$PROJECT_DIR$/../LenguajesDeMarcas/PRACTICAS/PI_01.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LenguajesDeMarcas/patata/CSS1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../LenguajesDeMarcas/patata/CSS1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LenguajesDeMarcas/patata/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../LenguajesDeMarcas/patata/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LenguajesDeMarcas/simple-website/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../LenguajesDeMarcas/simple-website/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.lock_info" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.lock_info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.buildship.core/gradle/versions.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.buildship.core/gradle/versions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/10/40a078c4c0bb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/10/900bbaa3bcbb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/18/c05933b3bfbb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/1c/9097dae9bfbb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/2f/b0139868bfbb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/3/20d90975c0bb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/39/d01b9011bfbb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/4a/c062069bbfbb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/5c/b014bacdbebb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/6/d03d670fbebb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/a1/a057e030bcbb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/a8/408d0579bfbb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/b/00fe7424bfbb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/b4/10ffbacdbebb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/cd/c047fdf4c0bb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.history/d9/00583189c1bb0010173ba21350bd6951" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/HolaMundo/.indexes/e4/1e/history.index" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/HolaMundo/.indexes/e4/1e/history.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/HolaMundo/.markers" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/HolaMundo/.markers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/HolaMundo/org.eclipse.jdt.core/state.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/ayuda/org.eclipse.jdt.core/state.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/ayuda/org.eclipse.jdt.core/state.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.debug.ui.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.debug.ui.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.core/1865797976.index" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.core/1865797976.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.core/3702792539.index" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.core/3702792539.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.logback/0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.logback/0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/version.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../Programacion/eclipse-workspace/.metadata/version.ini" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="35SZyMXvQglNk53BfQWesRkfnin" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Examen.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Examen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PycharmProjects" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Examen" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Examen/Examen.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Examen" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-f69e5c277ee4-cbfc7b97e6b2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-252.27397.106" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="39363255-c751-4db9-b54f-e7dfc52543a3" name="Changes" comment="" />
+      <created>1763105689208</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763105689208</updated>
+    </task>
+    <servers />
+  </component>
+</project>

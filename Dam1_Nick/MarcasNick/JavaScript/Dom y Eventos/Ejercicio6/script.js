@@ -4,10 +4,12 @@ let ganado = false;
 let perdido = false;
 const MAX_INTENTOS = 10;
 
+
 function actualizarIntentosTexto() {
+    
     const intentosTexto = document.getElementById('intentosTexto');
     if (intentos.length > 0) {
-        intentosTexto.textContent = 'INTENTOS REALIZADOS: ' + intentos.join(' ');
+        intentosTexto.textContent = 'INTENTOS REALIZADOS:  '+   intentos.join(' ');
     } else {
         intentosTexto.textContent = 'INTENTOS REALIZADOS';
     }
@@ -36,6 +38,7 @@ function jugar() {
     }
     
     intentos.push(num);
+  
     actualizarIntentosTexto();
     
 

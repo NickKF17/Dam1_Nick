@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica_primera</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Mi primera página Web</h1>
+    <h2>Realizado por Martín Taboada</h2>
+    nosequeescribiraqui
+    <!-- me encantó usar emojis aquí -->
+    <p>Mira que linda carita en este párrafo &#x1559;(`&#x25bf;&#xb4;)&#x1557;</p>
+    <p>Lorem ipsum dolor <b>sit amet, consectetur adipiscing elit. In vestibulum lobortis risus quis sagittis. Donec nec pharetra diam. <i>Ut tristique vitae purus nec tempor.</i></b> Sed sollicitudin volutpat dui, et accumsan nunc ullamcorper pellentesque. Phasellus volutpat turpis eu nibh gravida, eget blandit lorem venenatis. Duis maximus porta tortor, ut bibendum urna finibus at. Nunc viverra orci dapibus venenatis fringilla. Curabitur lobortis facilisis nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis dignissim vitae lacus non imperdiet. Duis suscipit, turpis id condimentum dictum, sapien diam mollis mauris, in pellentesque dui libero quis dui. Phasellus lacinia rhoncus consequat. Curabitur vitae imperdiet lorem. Donec nec facilisis sem. Integer ac tortor in ligula porta sollicitudin id quis orci. Proin sed varius libero. </p>
+    <br>
+    <p>Etiam bibendum <del>convallis tortor ut tristique.</del> Nulla et leo odio. <mark>Suspendisse quis odio interdum, luctus turpis vel, lobortis metus. Vivamus ultricies,</mark> magna a posuere volutpat, metus nibh ultricies purus, sit amet dignissim augue ligula efficitur quam. Aenean ligula enim, feugiat id lorem nec, interdum sagittis sem. Curabitur vitae sapien ac eros gravida pretium non a neque. Morbi mattis non risus eget rhoncus. Proin tortor purus, pellentesque et lacinia a, ultricies et erat. Duis nibh mauris, semper ut iaculis eget, dapibus ut purus. Donec congue accumsan orci, eget interdum erat consequat sit amet. Quisque erat erat, tincidunt ut risus id, vehicula venenatis lectus. Aenean ultricies lectus in dui imperdiet dictum. Phasellus elit erat, tristique vitae felis at, volutpat dictum enim. Aliquam in rhoncus nulla. Morbi nec dui arcu. </p>
+    <cite>"Esta es una cita genérica"</cite>
+    <h3>Lista de la compra:</h3>
+    <ul>
+        <li class="Lista"><del>Queso</del></li>
+        <li class="Lista">huevos</li>
+        <li>Enable switching the theme</li>
+    </ul>
+    <!-- Comentario -->
+     <!-- Esto es un comentario -->
+      <br>
+      <p><b>Tres canciones:</b></p>
+    <ol>
+        <li><i>Miéntele</i> - bunkers.</li>
+        <li><i>Motora</i> - Máquina camaleón.</li>
+        <li><i>Tenías que ser tú</i> - Silvana Estrada</li>
+    </ol>
+    <br>
+    <p><b>Tres peliculas:</b></p>
+    <ul>
+        <li type="square">Donnie Darko</li>
+        <li >Nacho libre</li>
+        <li>Spiderman (2002)</li>
+    </ul>
+    <br>
+    <p><b>Lista de definiciones:</b></p>
+    <dl>
+        <dt>Homer:</dt>
+        <dd><b>1. </b>American bonehead.</dd>
+        <dd><b>2. Pull a homer:</b> to suceeed despite idiocy.</dd>
+        <dt>Homogeneus</dt>
+        <dd><b>1. </b>Like in nature.</dd>
+    </dl>
+</body>
+</html>
