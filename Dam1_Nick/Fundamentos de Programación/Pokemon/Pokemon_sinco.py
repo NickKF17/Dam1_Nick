@@ -41,7 +41,7 @@ class Equipo:
 
         if len(self.pokemons) < 3:
             self.pokemons.append(pokemon)
-            print(f"✓ {pokemon.nombre} ha sido añadido al equipo {self.nombre_equipo}")
+            print(f"{pokemon.nombre} ha sido añadido al equipo {self.nombre_equipo}")
             return True
         else:
             print(f"No se puede añadir {pokemon.nombre}. El equipo ya tiene 3 pokemons")
@@ -121,7 +121,7 @@ if __name__ == "__main__":
     mi_equipo.agregar_pokemon(charizard)
     mi_equipo.agregar_pokemon(bulbasaur)
 
-    # Intentar agregar un cuarto pokemon (debería fallar)
+
     pokemon_extra = Pokemon("Squirtle", "P004", ["Agua"], 8.0, 10.0, 0.4, 0.6)
     mi_equipo.agregar_pokemon(pokemon_extra)
 
