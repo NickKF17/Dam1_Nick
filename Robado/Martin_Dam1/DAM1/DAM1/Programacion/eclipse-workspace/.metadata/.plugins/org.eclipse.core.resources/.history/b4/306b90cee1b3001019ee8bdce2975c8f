@@ -1,0 +1,17 @@
+package defecto;
+import java.util.Scanner;
+public class EGP3_10 {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		String DNI = teclado.nextLine();
+		if (DNI.length()!=9)
+			System.out.println("Error en el typeo del programa, vuelve a iniciar el programa por favor.");
+		String dni = " 28666555Z  ";
+		System.out.println(dni);
+		dni = dni.trim();
+		System.out.println(dni);
+
+	}
+
+}

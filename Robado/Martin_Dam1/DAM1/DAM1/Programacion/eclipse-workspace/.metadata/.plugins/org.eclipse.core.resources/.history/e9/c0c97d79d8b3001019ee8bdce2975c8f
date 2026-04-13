@@ -1,0 +1,15 @@
+package defecto;
+
+import java.util.Scanner;
+
+public class EGP3_3 {
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		String nombre = teclado.nextLine();
+		String apellidos = teclado.nextLine();
+		System.out.println(apellidos + ", " + nombre);
+		System.out.println("Fin del prgrama.");
+
+	}
+
+}
