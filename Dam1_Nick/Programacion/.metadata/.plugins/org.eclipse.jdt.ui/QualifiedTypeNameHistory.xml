@@ -19,4 +19,7 @@
     <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.security.SecureClassLoader"/>
+    <fullyQualifiedTypeName name="java.util.Base64"/>
 </qualifiedTypeNameHistroy>
