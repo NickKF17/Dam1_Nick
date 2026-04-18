@@ -1,0 +1,205 @@
+Texto_Inverso
+clear-host
+$frase = Read-Host "Frase a darle la vuelta"
+
+$frasesinsalto=""
+
+for($i=$frase.Length-1 ;$i -ge 0;$i--){
+Write-host $frase.Substring($i,1)
+$frasesinsalto+=$frase.Substring($i,1)
+}
+write-host $frasesinsalto
+
+
+#26 menú básico
+
+$num=1
+$contador=0
+clear-host
+do{
+write-host "###############################################"
+write-host ""
+write-host "                    Menu"
+write-host ""
+write-host "1. Ver version"
+write-host "2. Ver fecha"
+write-host "3. Ver ayuda"
+write-host "4. Abrir bloc de notas"
+write-host "5. Abrir calculadora"
+write-host "6. Salir"
+write-host "###############################################"
+
+if($contador -eq 1){
+Write-host "Bobo"
+$contador=0
+}
+$opc = Read-Host "Tu opcion: "
+write-host ""
+
+write-host "Introduciste [$opc]"
+#if(opc != 1 || opc == 6)
+if($opc -ne 0 -or $opc -ge 6){
+
+switch($opc){
+    1 {write-host "version" -ForegroundColor Cyan
+        get-host
+    }
+    2 {write-host "fecha" -ForegroundColor Cyan
+        get-date
+    }
+    3 {write-host "ayuda" -ForegroundColor Cyan
+        get-help
+    }
+    4 {write-host "bloc de notas" -ForegroundColor Cyan
+        notepad
+    }
+    5 {write-host "calculadora" -ForegroundColor Cyan
+        Start-process calc 
+    }
+    6 {write-host "fin" -ForegroundColor Red
+        exit
+    }
+    deafault {
+ clear-host
+     
+$contador+=1
+    $num=0
+     
+    }
+}
+}
+}while( $num -ne 0)
+
+ScriptVocales
+
+clear-host
+$cadena=Read-Host "Introduce cadena"
+Write-host "introduciste" $cadena
+$cont=0
+$aux=""
+for($i=0;$i -le $cadena.Length;$i++){
+$c=$cadena[$i]
+if($c -eq "a" -or $c -eq "e" -or $c -eq "i" -or $c -eq "o" -or $c -eq "u"){
+$cont++
+$aux+=","+$c 
+}
+}
+Write-host "no. de vocales: " $cont" ,vocales obtenidas: "$aux 
+
+Menu 2
+
+#26 menú básico
+$num=1
+$contador=0
+clear-host
+do{
+write-host "###############################################"
+write-host ""
+write-host "                    Menu"
+write-host ""
+write-host "1. Listar Usuarios"
+write-host "2. Crear usuarios (pide usuario y contraseña)"
+write-host "3. Elimina usuarios (pide usuario)"
+write-host "4. Modifica usuarios (pide usuario y nuevo nombre)"
+write-host "5. Salir"
+write-host "###############################################"
+
+Read-Host "Seleccione opción"
+$opc = Read-Host "Tu opcion: "
+write-host ""
+
+write-host "Introduciste [$opc]"
+#if(opc != 1 || opc == 6)
+if($opc -ne 0 -or $opc -ge 6){
+
+switch($opc){
+    1 {write-host "Lista de usuarios" -ForegroundColor Cyan
+        get-host
+    }
+    2 {write-host "Creando usuario" -ForegroundColor Cyan
+        $user = read-host "Usuario: "
+        $contra = read-host "Contraseña: "
+    }
+    3 {write-host "Eliminando usuario" -ForegroundColor Cyan
+        $eliminacion = Read-host "Qué usuario quieres eliminar "
+    }
+    4 {write-host "Modificando nombre de usuario" -ForegroundColor Cyan
+        $nombre = "¿Que usuario quieres cambiar de nombre?"
+        $newnombre = "¿Cual es el nombre nuevo?"
+    }
+  
+    5 {write-host "fin" -ForegroundColor Red
+        exit
+    }
+    deafault {
+ clear-host
+     
+$contador+=1
+    $num=0
+     
+    }
+}
+}
+}while( $num -ne 0)
+
+
+Menu con funcion
+
+function mostrarmenu{
+    clear-host
+    Write-Host "============MENU============"
+    Write-Host "1) Crear carpeta"
+    Write-Host "2) Crear fichero"
+    Write-Host "3) Listar contenido"
+    Write-Host "4) Borrar fichero o carpeta"
+    Write-Host "5) Salir"
+    Write-Host "============================"
+}
+
+do {
+mostrarmenu
+   
+    $opcion = Read-Host "Elige una opción"
+
+    switch ($opcion) {
+
+        "1" {
+            $ruta = Read-Host "Introduce el nombre o ruta de la carpeta"
+            New-Item -ItemType Directory -Path $ruta -Force
+            Write-Host "Carpeta creada."
+           
+        }
+
+        "2" {
+            $ruta = Read-Host "Introduce el nombre o ruta del fichero"
+            New-Item -ItemType File -Path $ruta -Force
+            Write-Host "Fichero creado."
+            
+        }
+
+        "3" {
+            $ruta = Read-Host "Introduce la ruta a listar"
+            Get-ChildItem -Path $ruta
+            
+        }
+
+        "4" {
+            $ruta = Read-Host "Introduce la ruta del fichero o carpeta a borrar"
+            Remove-Item -Path $ruta -Recurse -Force
+            Write-Host "Elemento borrado."
+            
+        }
+
+        "5" {
+            Write-Host "Saliendo..."
+            break
+        }
+
+        Default {
+            Write-Host "Opción no válida. Pulsa una tecla para continuar."
+           
+        }
+    }
+
+
+} while ($opcion -ne "5")
