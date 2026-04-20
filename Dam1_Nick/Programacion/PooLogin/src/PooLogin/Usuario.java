@@ -74,7 +74,7 @@ public class Usuario {
 		String saltTxt = Base64.getEncoder().encodeToString(salt);
 		return saltTxt;
 	}
-	private static String generarHash(String txt) {
+	public static String generarHash(String txt) {
 		String hashtxt=null;
 		String algoritmo="SHA-512";
 		try {
