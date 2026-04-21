@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurboVault Garage | Hot Wheels Collector Store</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles2.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-speedometer2 text-danger"></i> TURBOVAULT<span class="text-danger">GARAGE</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Colecciones</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Treasure Hunt</a></li>
+                            <li><a class="dropdown-item" href="#">Japanese Legends</a></li>
+                            <li><a class="dropdown-item" href="#">Premium</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-light position-relative" type="button" id="cartButton">
+                        <i class="bi bi-cart3"></i>
+                        <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            0
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CARRUSEL HERO -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/ae86Trueno.jpg" class="d-block w-100" alt="Ae86 Trueno">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="logo-font">TREASURE HUNTS</h2>
+                    <p>Las piezas más raras de TurboVault.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/lambo.webp" class="d-block w-100" alt="Lamborghini Huracán">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="logo-font">Próximos productos</h2>
+                    <p>Consigue los modelos más exclusivos.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/toyotasupra.jpg" class="d-block w-100" alt="Toyota Supra MK4">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="logo-font">JAPANESE LEGENDS</h2>
+                    <p>Lo mejor del tuning japonés.</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- CATÁLOGO DE PRODUCTOS (4 COCHES) -->
+    <main class="container my-5" id="catalogo">
+        <h2 class="text-center mb-4 fw-bold">Nuestro Inventario</h2>
+        <div class="row g-4">
+            <!-- Producto 1 -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/chevy67.jpg" class="card-img-top" alt="'67 Chevy Camaro">
+                    <div class="card-body text-center">
+                        <span class="badge bg-danger mb-2">Treasure Hunt</span>
+                        <h5 class="card-title fw-bold">'67 Chevy Camaro</h5>
+                        <p class="card-text text-muted">$4.99 USD</p>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#productModal1">Detalles</button>
+                            <button class="btn btn-danger add-to-cart" data-id="1" data-name="'67 Chevy Camaro" data-price="4.99">
+                                <i class="bi bi-plus-lg"></i> Añadir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/Skyliner34.avif" class="card-img-top" alt="Nissan Skyline GT-R R34">
+                    <div class="card-body text-center">
+                        <span class="badge bg-warning text-dark mb-2">Premium</span>
+                        <h5 class="card-title fw-bold">Nissan Skyline GT-R R34</h5>
+                        <p class="card-text text-muted">$5.50 USD</p>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#productModal2">Detalles</button>
+                            <button class="btn btn-danger add-to-cart" data-id="2" data-name="Nissan Skyline GT-R R34" data-price="5.50">
+                                <i class="bi bi-plus-lg"></i> Añadir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/mazdarx7.webp" class="card-img-top" alt="Mazda RX-7 FD">
+                    <div class="card-body text-center">
+                        <span class="badge bg-danger mb-2">Treasure Hunt</span>
+                        <h5 class="card-title fw-bold">Mazda RX-7 FD</h5>
+                        <p class="card-text text-muted">$5.99 USD</p>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#productModal3">Detalles</button>
+                            <button class="btn btn-danger add-to-cart" data-id="3" data-name="Mazda RX-7 FD" data-price="5.99">
+                                <i class="bi bi-plus-lg"></i> Añadir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/toyotasupra.jpg" class="card-img-top" alt="Toyota Supra MK4">
+                    <div class="card-body text-center">
+                        <span class="badge bg-info text-dark mb-2">Japanese Legend</span>
+                        <h5 class="card-title fw-bold">Toyota Supra MK4</h5>
+                        <p class="card-text text-muted">$6.99 USD</p>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#productModal4">Detalles</button>
+                            <button class="btn btn-danger add-to-cart" data-id="4" data-name="Toyota Supra MK4" data-price="6.99">
+                                <i class="bi bi-plus-lg"></i> Añadir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SECCIÓN SUSCRIPCIÓN -->
+    <section class="bg-light py-5 border-top border-bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <h3 class="fw-bold">Únete al Club de Coleccionistas</h3>
+                    <p class="text-muted">Recibe alertas sobre nuevos reabastecimientos y modelos STH.</p>
+                    <form id="subscribeForm" class="needs-validation" novalidate>
+                        <div class="input-group mb-3">
+                            <input type="email" id="subscribeEmail" class="form-control" placeholder="tu@email.com" required>
+                            <button class="btn btn-dark" type="submit">Suscribirse</button>
+                            <div class="invalid-feedback text-start">Por favor, ingresa un correo válido.</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-danger">TURBOVAULT GARAGE</h5>
+                    <p class="small text-secondary">La tienda número uno para entusiastas del diecast y la tecnología automotriz a escala.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-secondary text-decoration-none">Términos de Envío</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Preguntas Frecuentes</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">Síguenos</h5>
+                    <div class="d-flex gap-3 fs-4">
+                        <i class="bi bi-facebook" style="cursor: pointer;"></i>
+                        <i class="bi bi-instagram" style="cursor: pointer;"></i>
+                        <i class="bi bi-twitter-x" style="cursor: pointer;"></i>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <p class="text-center small text-secondary mb-0">&copy; 2026 TurboVault Garage Hot Wheels Collector. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODALES DE PRODUCTOS (4 modales individuales) -->
+
+    <!-- Modal Producto 1 -->
+    <div class="modal fade" id="productModal1" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold text-uppercase">Detalle del Modelo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="img/chevy67.jpg" class="img-fluid rounded" alt="'67 Chevy Camaro">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="text-danger">'67 Chevy Camaro</h4>
+                            <p><strong>Serie:</strong> Muscle Mania</p>
+                            <p><strong>Color:</strong> Rojo Spectraflame</p>
+                            <p><strong>Precio:</strong> $4.99 USD</p>
+                            <p class="small">Este modelo premium cuenta con carrocería de metal y pintura de alta resistencia. Edición limitada Treasure Hunt.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-danger buy-now" data-name="'67 Chevy Camaro" data-price="4.99">Comprar Ahora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Producto 2 -->
+    <div class="modal fade" id="productModal2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold text-uppercase">Detalle del Modelo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="img/Skyliner34.avif" class="img-fluid rounded" alt="Nissan Skyline GT-R R34">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="text-danger">Nissan Skyline GT-R R34</h4>
+                            <p><strong>Serie:</strong> Fast & Furious </p>
+                            <p><strong>Color:</strong> Azul Bayside</p>
+                            <p><strong>Precio:</strong> $5.50 USD</p>
+                            <p class="small">El icónico Godzilla en formato 1:64. Llantas de aleación y detalles realistas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-danger buy-now" data-name="Nissan Skyline GT-R R34" data-price="5.50">Comprar Ahora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Producto 3 -->
+    <div class="modal fade" id="productModal3" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold text-uppercase">Detalle del Modelo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="img/mazdarx7.webp" class="img-fluid rounded" alt="Mazda RX-7 FD">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="text-danger">Mazda RX-7 FD</h4>
+                            <p><strong>Serie:</strong> Fast & Furious </p>
+                            <p><strong>Color:</strong> Rojo con detalles en blanco</p>
+                            <p><strong>Precio:</strong> $5.99 USD</p>
+                            <p class="small">El legendario motor rotativo en miniatura. Pintura brillante y acabados premium.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-danger buy-now" data-name="Mazda RX-7 FD" data-price="5.99">Comprar Ahora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Producto 4 -->
+    <div class="modal fade" id="productModal4" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold text-uppercase">Detalle del Modelo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="img/toyotasupra.jpg" class="img-fluid rounded" alt="Toyota Supra MK4">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="text-danger">Toyota Supra MK4</h4>
+                            <p><strong>Serie:</strong> Fast & Furious</p>
+                            <p><strong>Color:</strong> Naranja Metálico</p>
+                            <p><strong>Precio:</strong> $6.99 USD</p>
+                            <p class="small">El coche de Brian O'Conner. Edición especial con gráficos personalizados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-danger buy-now" data-name="Toyota Supra MK4" data-price="6.99">Comprar Ahora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICACIÓN -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="cartToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-success text-white">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                <strong class="me-auto">¡Éxito!</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">
+                Producto añadido al carrito correctamente.
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ==================== CARRITO DE COMPRAS ====================
+        let cartCount = 0;
+        const cartCountElement = document.getElementById('cartCount');
+        const toastElement = document.getElementById('cartToast');
+        let toast;
+
+        // Inicializar Toast
+        if (toastElement) {
+            toast = new bootstrap.Toast(toastElement, { delay: 2000 });
+        }
+
+        // Función para actualizar contador del carrito
+        function updateCartCount() {
+            cartCountElement.textContent = cartCount;
+            cartCountElement.classList.add('cart-update');
+            setTimeout(() => {
+                cartCountElement.classList.remove('cart-update');
+            }, 300);
+        }
+
+        // Función para mostrar el toast
+        function showToast(message = 'Producto añadido al carrito correctamente.') {
+            const toastBody = toastElement.querySelector('.toast-body');
+            if (toastBody) toastBody.textContent = message;
+            if (toast) {
+                toast.show();
+            } else {
+                // Si el toast no está inicializado, lo inicializamos
+                toast = new bootstrap.Toast(toastElement, { delay: 2000 });
+                toast.show();
+            }
+        }
+
+        // Agregar evento a todos los botones "Añadir"
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.getAttribute('data-name');
+                cartCount++;
+                updateCartCount();
+                showToast(`${productName} añadido al carrito.`);
+            });
+        });
+
+        // Botones "Comprar Ahora" dentro de los modales
+        document.querySelectorAll('.buy-now').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.getAttribute('data-name');
+                cartCount++;
+                updateCartCount();
+                showToast(`${productName} añadido al carrito.`);
+                // Cerrar el modal después de añadir
+                const modal = bootstrap.Modal.getInstance(this.closest('.modal'));
+                if (modal) modal.hide();
+            });
+        });
+
+        // Botón del carrito (solo muestra el total actual)
+        const cartButton = document.getElementById('cartButton');
+        if (cartButton) {
+            cartButton.addEventListener('click', () => {
+                if (cartCount === 0) {
+                    showToast('El carrito está vacío. ¡Agrega algunos modelos!');
+                } else {
+                    showToast(`Tienes ${cartCount} producto${cartCount !== 1 ? 's' : ''} en tu carrito.`);
+                }
+            });
+        }
+
+        // ==================== VALIDACIÓN FORMULARIO ====================
+        (function() {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms).forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    } else {
+                        event.preventDefault();
+                        const emailInput = document.getElementById('subscribeEmail');
+                        if (emailInput && emailInput.value) {
+                            showToast(`¡Gracias por suscribirte, ${emailInput.value}! Recibirás nuestras novedades.`);
+                            emailInput.value = '';
+                            form.classList.remove('was-validated');
+                        }
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })();
+
+        // ==================== CIERRE AUTOMÁTICO DEL CARRUSEL (opcional) ====================
+        // El carrusel ya tiene data-bs-ride="carousel" para auto-reproducción
+
+        console.log('TurboVault Garage - ¡Listo para rodar! 🏎️');
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+/* Colores TurboVault Garage */
+:root {
+    --secondary-blue: #0046AD;
+    --success-green: #28A745;
+    --warning-orange: #FFCC00;
+    --dark-bg: #1A1A1A;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.logo-font {
+    font-family: 'Racing Sans One', cursive;
+    letter-spacing: 1px;
+    font-style: italic;
+}
+
+.bg-secondary-custom {
+    background-color: var(--secondary-blue) !important;
+}
+
+.bg-success-custom {
+    background-color: var(--success-green) !important;
+}
+
+.text-warning-custom {
+    color: var(--warning-orange) !important;
+}
+
+.btn-warning-custom {
+    background-color: var(--warning-orange);
+    border: none;
+}
+
+.btn-warning-custom:hover {
+    background-color: #e6b800;
+}
+
+.btn-secondary-custom {
+    background-color: var(--secondary-blue);
+    color: white;
+}
+
+.btn-secondary-custom:hover {
+    background-color: #003a8f;
+    color: white;
+}
+
+/* Estilos del Carrusel - DEFINITIVO */
+.carousel-item {
+    height: 450px;
+    background-color: var(--dark-bg);
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 15px 25px;
+    backdrop-filter: blur(3px);
+}
+
+/* Efecto hover en Cards */
+.card {
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card:hover {
+    border: 2px solid var(--secondary-blue) !important;
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Toast personalizado */
+.toast-custom {
+    background-color: var(--success-green);
+    color: white;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 250px;
+    }
+    
+    .carousel-caption {
+        display: block !important;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .carousel-caption h2 {
+        font-size: 18px;
+    }
+    
+    .carousel-caption p {
+        font-size: 10px;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-img-top {
+        height: 180px;
+    }
+}
+
+/* Animación para el carrito */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.cart-update {
+    animation: pulse 0.3s ease;
+}
+
+/* Estilo para el modal */
+.modal-content {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: var(--dark-bg);
+    color: white;
+    border-bottom: 3px solid var(--warning-orange);
+}
+
+.modal-header .btn-close {
+    filter: brightness(0) invert(1);
+}
