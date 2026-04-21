@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "esquema.dtd">
+<biblioteca nombre="Biblioteca Municipal de Madrid" sede="Centro">
+
+  <catalogo>
+
+    <libro isbn="BK001" categoria="ficcion">
+      <titulo>Cien Años de Soledad</titulo>
+      <autor>Gabriel García Márquez</autor>
+    </libro>
+
+    <libro isbn="BK002" categoria="tecnico">
+      <titulo>El Lenguaje de Programación C</titulo>
+      <autor>Brian W. Kernighan</autor>
+      <autor>Dennis M. Ritchie</autor>
+    </libro>
+
+    <libro isbn="BK003" categoria="no-ficcion">
+      <titulo>Sapiens: De Animales a Dioses</titulo>
+      <autor>Yuval Noah Harari</autor>
+    </libro>
+
+    <libro isbn="BK004" categoria="infantil">
+      <titulo>El Principito</titulo>
+      <autor>Antoine de Saint-Exupéry</autor>
+    </libro>
+
+    <libro isbn="BK005" categoria="ficcion">
+      <titulo>1984</titulo>
+      <autor>George Orwell</autor>
+    </libro>
+
+    <libro isbn="BK006" categoria="no-ficcion">
+      <titulo>Breve Historia del Tiempo</titulo>
+      <autor>Stephen Hawking</autor>
+    </libro>
+
+  </catalogo>
+
+  <inventario>
+    <ejemplar codigo="EJ001" ref_libro="BK001" estado="bueno">
+      <estanteria>A-12</estanteria>
+    </ejemplar>
+    <ejemplar codigo="EJ002" ref_libro="BK001" estado="gastado">
+      <estanteria>A-12</estanteria>
+    </ejemplar>
+    <ejemplar codigo="EJ003" ref_libro="BK002" estado="nuevo">
+      <estanteria>B-05</estanteria>
+    </ejemplar>
+    <ejemplar codigo="EJ004" ref_libro="BK003" estado="bueno">
+      <estanteria>C-08</estanteria>
+    </ejemplar>
+    <ejemplar codigo="EJ005" ref_libro="BK004" estado="nuevo">
+      <estanteria>D-01</estanteria>
+    </ejemplar>
+    <ejemplar codigo="EJ006" ref_libro="BK005" estado="bueno">
+      <estanteria>A-20</estanteria>
+    </ejemplar>
+    <ejemplar codigo="EJ007" ref_libro="BK006" estado="gastado">
+      <estanteria>C-15</estanteria>
+    </ejemplar>
+  </inventario>
+
+  <usuarios>
+    <socio dni="DNI-A" nivel="premium">
+      <nombre_completo>Ana García López</nombre_completo>
+    </socio>
+    <socio dni="DNI-B" nivel="basico">
+      <nombre_completo>Carlos Martínez Ruiz</nombre_completo>
+    </socio>
+    <socio dni="DNI-C" nivel="infantil">
+      <nombre_completo>Lucía Fernández Torres</nombre_completo>
+    </socio>
+    <socio dni="DNI-D" nivel="basico">
+      <nombre_completo>Pedro Sánchez Gómez</nombre_completo>
+    </socio>
+    <socio dni="DNI-E" nivel="premium">
+      <nombre_completo>María Jiménez Blanco</nombre_completo>
+    </socio>
+  </usuarios>
+
+</biblioteca>
