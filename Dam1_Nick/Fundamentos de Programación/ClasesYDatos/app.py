@@ -50,3 +50,4 @@ guardar(nuevoContacto)
 
 for contacto in obtenerTodo():
     print(contacto)
+    

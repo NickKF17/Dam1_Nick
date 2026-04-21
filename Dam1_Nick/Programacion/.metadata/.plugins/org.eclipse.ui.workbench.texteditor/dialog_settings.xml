@@ -3,7 +3,9 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<section name="java.lang.Class">
 		<item key="replaceBarOpen" value="false"/>
+		<item key="selection" value="fichero"/>
 		<list key="findhistory">
+			<item value="fichero"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">

@@ -2,3 +2,5 @@ Pineritos
 https://github.com/PiniJudini
 Martini
 https://github.com/martinbosquez2015-cmd
+UskoKruM2010
+https://github.com/UskoKruM/UskoKruM2010_Python.git
