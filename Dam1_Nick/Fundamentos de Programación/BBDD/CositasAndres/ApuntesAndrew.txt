@@ -1,0 +1,67 @@
+import sqlite3
+
+# 1. CONEXIÓN (Crea el archivo .db si no existe)
+def obtener_conexion():
+    # row_factory permite acceder por nombre: fila['nombre'] en vez de fila[0]
+    conn = sqlite3.connect('sistema.db')
+    conn.row_factory = sqlite3.Row 
+    return conn
+
+# 2. CREACIÓN DE TABLAS (DDL)
+def inicializar_tablas():
+    with obtener_conexion() as conn:
+        cursor = conn.cursor()
+        # Nota: Usamos INTEGER PRIMARY KEY AUTOINCREMENT para IDs
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS usuarios (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                nombre TEXT NOT NULL,
+                email TEXT UNIQUE NOT NULL,
+                fecha DATETIME DEFAULT CURRENT_TIMESTAMP
+            )
+        ''')
+        # No es estrictamente necesario commit() dentro de 'with' en SQLite
+        # pero es una buena práctica manual.
+
+# 3. OPERACIONES CRUD (DML)
+def insertar_usuario(nombre, email):
+    try:
+        with obtener_conexion() as conn:
+            cursor = conn.cursor()
+            # IMPORTANTE: Usar '?' como placeholder para evitar SQL Injection
+            cursor.execute("INSERT INTO usuarios (nombre, email) VALUES (?, ?)", (nombre, email))
+            conn.commit()
+            print(f"ID insertado: {cursor.lastrowid}")
+    except sqlite3.IntegrityError:
+        print("Error: El email ya existe.")
+
+def consultar_usuarios():
+    with obtener_conexion() as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM usuarios")
+        # fetchall() devuelve lista de filas
+        filas = cursor.fetchall()
+        for fila in filas:
+            print(f"{fila['id']}: {fila['nombre']} ({fila['email']})")
+
+def actualizar_email(id_usuario, nuevo_email):
+    with obtener_conexion() as conn:
+        cursor = conn.cursor()
+        cursor.execute("UPDATE usuarios SET email = ? WHERE id = ?", (nuevo_email, id_usuario))
+        conn.commit()
+        # rowcount dice cuántas filas se vieron afectadas
+        print(f"Filas actualizadas: {cursor.rowcount}")
+
+def borrar_usuario(id_usuario):
+    with obtener_conexion() as conn:
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM usuarios WHERE id = ?", (id_usuario,))
+        conn.commit()
+
+# ======================================================
+# INICIO DEL PROGRAMA
+# ======================================================
+if __name__ == "__main__":
+    inicializar_tablas()
+    insertar_usuario("Alex", "alex@correo.com")
+    consultar_usuarios()
