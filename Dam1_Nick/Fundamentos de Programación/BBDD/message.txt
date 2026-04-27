@@ -1,0 +1,57 @@
+Como ya tienes una buena base de gestión de datos, estos 4 ejercicios están diseñados para subir un escalón en complejidad técnica. Se centran en integridad referencial, optimización de consultas y persistencia avanzada.
+
+Aquí tienes los 4 retos para practicar:
+
+Ejercicio 1: Sistema de Log de Errores (SQLite + Logs)
+Objetivo: Implementar una tabla que registre eventos automáticamente sin alterar el flujo principal.
+
+Contexto: Tienes una aplicación que realiza muchas operaciones, pero quieres auditar cuándo algo falla.
+
+Tarea: 1. Crea una tabla logs_sistema con campos: id, modulo (string), error_msg (text), timestamp (datetime).
+2. Crea una función registrar_error(modulo, mensaje).
+3. El reto: Envuelve tus operaciones de base de datos (por ejemplo, al insertar un producto) en un try/except. Si el except captura un error, llama automáticamente a registrar_error() antes de abortar o mostrar el mensaje al usuario.
+
+Ejercicio 2: Gestión de "Stock Bajo" y Reabastecimiento (MySQL)
+Objetivo: Lógica de negocio basada en datos.
+
+Contexto: Necesitas gestionar inventarios de forma eficiente.
+
+Tarea:
+
+Define un límite de stock (ej. 10 unidades).
+
+Crea una función obtener_productos_criticos() que devuelva una lista de productos con stock menor al límite.
+
+Crea una función reponer_stock(producto_id, cantidad_añadida) que actualice la cantidad actual sumándole la nueva cantidad.
+
+El reto: Haz que la función reponer_stock registre también un pequeño historial de reposición en una tabla separada llamada historial_reposiciones (id, producto_id, cantidad, fecha).
+
+Ejercicio 3: Relaciones N:M con SQLAlchemy (Etiquetas de Posts)
+Objetivo: Manejar relaciones complejas (Muchos a Muchos).
+
+Contexto: Un blog donde un Post puede tener muchas etiquetas, y una etiqueta puede pertenecer a muchos Posts.
+
+Tarea:
+
+Crea los modelos Post y Etiqueta usando SQLAlchemy.
+
+Crea una tabla intermedia (post_etiquetas) que vincule los id de ambos.
+
+El reto: Implementa una función buscar_posts_por_etiqueta(nombre_etiqueta) que utilice join para devolver todos los objetos Post asociados a un nombre de etiqueta dado.
+
+Ejercicio 4: Caché y Rendimiento (Generic/SQL)
+Objetivo: Optimización básica de consultas.
+
+Contexto: Tienes una consulta muy pesada (como SELECT COUNT(*) FROM ventas JOIN clientes ...) que tarda en ejecutarse.
+
+Tarea:
+
+Implementa una variable global en Python (o un diccionario) que actúe como "caché".
+
+Crea una función obtener_reporte_ventas():
+
+Si el dato ya está en tu variable de caché y tiene menos de 60 segundos de antigüedad, devuélvelo desde la memoria sin ir a la base de datos.
+
+Si el dato no existe o es antiguo, haz la consulta SQL, guarda el resultado en la caché y luego devuélvelo.
+
+El reto: Esto simula cómo funcionan los sistemas de alto tráfico para no saturar la base de datos con las mismas peticiones constantes.
