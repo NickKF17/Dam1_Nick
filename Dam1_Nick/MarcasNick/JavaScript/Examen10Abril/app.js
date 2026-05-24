@@ -1,33 +1,44 @@
-const inputNombre = document.getElementById("guest-name")
-let lista=document.getElementById("guest-list")
-let errormensaje=document.getElementById("error-msg")
-let crearelemento=document.createElement("li");
-let crearboton=document.createElement("button")
-function nuevoelemento() {
+const inputNombre = document.getElementById("guest-name");
+const lista = document.getElementById("guest-list");
+const errormensaje = document.getElementById("error-msg");
+const addBtn = document.getElementById("add-btn");
 
-lista.appendChild(crearelemento).textContent=inputNombre.value
-
-        return true
-}
+addBtn.addEventListener("click", validar);
 
 function comprobarNombre() {
-    let nombre = inputNombre.value
-    if(nombre.length < 3 ){
-errormensaje.textContent="El nombre debe tener al menos 3 caracteres";
-        return false
+    const nombre = inputNombre.value.trim();
+    if (nombre.length < 3) {
+        errormensaje.textContent = "El nombre debe tener al menos 3 caracteres";
+        return false;
+    }
+    return true;
 }
-        else{
-            return true
+
+function nuevoelemento() {
+    // ✅ Se crean DENTRO de la función, cada llamada crea elementos nuevos
+    const crearelemento = document.createElement("li");
+    const crearboton = document.createElement("button");
+
+    crearelemento.textContent = inputNombre.value.trim();
+    crearboton.textContent = "Eliminar";
+
+    // ✅ El botón elimina su propio <li> padre
+    crearboton.addEventListener("click", (e) => {
+        e.target.parentElement.remove();
+    });
+
+    crearelemento.appendChild(crearboton);
+    lista.appendChild(crearelemento);
 }
+
+function limpiarentrada() {
+    inputNombre.value = "";
+    errormensaje.textContent = "";
 }
-function validar(){
-    if(comprobarNombre() == true) 
-    nuevoelemento()
-    limpiarentrada()
-}
-function limpiarentrada(){
-    if(comprobarNombre()==true){
-    inputNombre.value=""
-    errormensaje.textContent=""
+
+function validar() {
+    if (comprobarNombre()) {
+        nuevoelemento();
+        limpiarentrada();
     }
 }
