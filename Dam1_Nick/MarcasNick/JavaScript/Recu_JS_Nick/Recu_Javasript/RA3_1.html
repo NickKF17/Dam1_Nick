@@ -1,0 +1,32 @@
+<header>
+  <span>Carrito: <strong id="contador-carrito">0</strong> items</span>
+</header>
+<main>
+  <div class="producto">
+    <h3>Zapatillas Running</h3>
+    <button id="btn-comprar">Añadir al carrito</button>
+  </div>
+</main>
+<script>
+
+let boton = document.getElementById("btn-comprar");
+let contador = document.getElementById("contador-carrito");
+
+let cont=0
+
+
+boton.addEventListener("click", function(){
+
+  cont=cont+1
+
+  contador.textContent=cont
+
+});
+
+
+
+
+
+
+
+</script>

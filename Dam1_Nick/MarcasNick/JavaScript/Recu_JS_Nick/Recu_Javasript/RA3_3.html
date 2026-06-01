@@ -1,0 +1,33 @@
+<form id="form-registro" action="/guardar-password">
+  <label for="password">Nueva contraseña:</label>
+  <input type="password" id="password" name="pwd">
+  
+  <p id="mensaje-error" style="color: red; display: none;">La contraseña es muy corta.</p>
+  
+  <button type="submit">Guardar</button>
+</form>
+<script>
+
+  
+
+  const boton=document.getElementsByTagName("button");
+  let msj_error=document.getElementById("mensaje-error");
+
+  // 1. Lee el texto que el usuario ha escrito en el input
+  // 2. Comprueba si la longitud
+  // 3. Si es menor de 8:
+  //    a) Evita que el formulario se envíe.
+  //    b) Haz que el párrafo "mensaje-error" sea visible.
+  // 4. Si es mayor o igual de 8, el formulario se enviará normalmente y el mensaje de error no se mostrará.
+
+boton.addEventListener("submit",function (event) {
+      let texto=document.getElementsByName("pwd");
+
+    if (texto.length < 8){
+       event.preventDefault();
+        msj_error.style.display="block";
+    }else{
+       msj_error.style.display=none
+    }
+  });
+</script>
